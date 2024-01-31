@@ -1,0 +1,15 @@
+Meeting 1
+January 31st, 2023
+
+Meeting Start:
+- Gabriel and Herman meet. Will hopefully find a usual place for next time.
+  - Sawneet sick
+Meeting Overview:
+- Decided on project's name
+  - Nerd Node
+- Gabriel Made the Github Repo
+- Herman took a look at the requirements and milestones
+  - First milestone coming up on February 11th
+
+- Will figure out local development after next week.
+Meeting Adjourned
