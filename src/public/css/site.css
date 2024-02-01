@@ -1,0 +1,84 @@
+html {
+	background-color: #98DAFC;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+header, footer {
+	color: white;
+	background-color: #312C32;
+	margin: 0 4em 0.5em;
+}
+
+main {
+	font-family: Georgia, Cambria, "Times New Roman", serif;
+	font-size: 100%;
+	background-color: white;
+	margin: 0 4em 0.5em;
+}
+
+header, footer, main {
+	padding: 0.5em;
+}
+
+h1 {
+	font-size: 1.5em;
+	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+}
+
+h2 {
+	font-size: 0.75em;
+	font-family: "Lucida Grande";
+}
+
+h3 {
+	font-size: 1.125em;
+	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+}
+
+nav {
+	font-size: 1.125em;
+	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+}
+
+nav li {
+	display: inline;
+	font-weight: bold;
+	list-style-type: none;
+}
+
+a {
+	color: #98DAFC;
+	font-weight: bold;
+}
+
+a:visited {
+	color: #DAAD86;
+}
+
+a:hover {
+	color:  #FFFFCC;
+}
+
+footer {
+	font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+}
+
+figure img {
+	width: 98%;
+	border: solid black;
+	padding: 0.25em;
+    margin: 0.1em;
+}
+
+#description, #related, #reviews {
+	border-bottom: 0.1em solid black;
+	margin-bottom: 0.5em;
+}
+
+.byline {
+	color: gray;
+	border-width: 0.15em;
+	font-style: italic;
+	margin-bottom: 0.15em;
+}
