@@ -1,0 +1,22 @@
+Meeting 2
+February 2nd, 2024
+
+Meeting Start:
+- Gabriel and Herman meet. Yoinked a table to work at in Arts
+  - Sawneet still sick
+Meeting Overview:
+- Figured out a general layout for the site, including our four main pages
+  - Main Page
+    - Gabriel will probably be working on this
+  - Register Page
+    - Sawneet can probably work on this
+  - Nerd (user) Page
+    - Herman will likely take this one
+  - Node (post) Page
+    - Probably a group effort
+- Gabriel will get a start on the figma and
+- Herman will explain the idea to Sawneet
+- will probably get the LAMP stack set up before the day's end
+
+- We'll probably also meet next Wednesday and Friday
+Meeting Adjourned
