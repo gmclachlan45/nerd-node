@@ -46,3 +46,9 @@ If time permits we will add the following functionality
 - Visibility of posts change depending on a like/dislike ratio
 
 Additional requirements may be added in the future depending on time and creativity
+
+Milestones: 
+Project Proposal - January 21st, 2024
+Client side experience - February 11th, 2024
+Site with minimal core functionality - March 3rd, 2024
+Full site - April 10th, 2024
