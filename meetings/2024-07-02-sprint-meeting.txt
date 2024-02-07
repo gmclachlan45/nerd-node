@@ -6,7 +6,7 @@ Meeting Start
 Meeting Overview:
 - Finish up the Figma
 - Herman getting a start on the user page for index
-    - Help with the register page
+- Sawneet works on the register page
 - Gabe work on document
 
 - Will postpone the installation of LAMP until the break probably.
