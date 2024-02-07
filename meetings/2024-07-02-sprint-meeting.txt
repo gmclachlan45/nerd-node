@@ -1,0 +1,15 @@
+Meeting 3
+February 7th, 2024
+
+Meeting Start
+- Everyone here, no one is sick.
+Meeting Overview:
+- Finish up the Figma
+- Herman getting a start on the user page for index
+    - Help with the register page
+- Gabe work on document
+
+- Will postpone the installation of LAMP until the break probably.
+    - unless there's a breakthrough
+- Meet on Friday as well
+Meeting Adjourned.
