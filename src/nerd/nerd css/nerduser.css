@@ -1,3 +1,17 @@
+#navbar ul {
+    list-style-type: none;
+}
+
+#navbar a {
+    color: black;
+    text-decoration: none;
+
+}
+
+#navbar a:hover {
+    text-decoration: underline;
+
+}
 h1, h2{
     font-size: 3em;
     color: green;
@@ -30,4 +44,14 @@ h2 {
 
 footer {
     background-color: #FB8C00;
+}
+
+footer h4 {
+    font-size: 3em;
+    margin-left: 2em;
+    
+}
+
+main {
+    border: 1px solid black;
 }
