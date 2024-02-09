@@ -1,0 +1,33 @@
+h1, h2{
+    font-size: 3em;
+    color: green;
+}
+
+h2 {
+    background-color: #26C6DA;
+    height: 80px;
+    width: 70%;
+}
+
+#report{
+    background-color: green;
+    color: white;
+    margin-left: 25em;
+    padding: 0.9em 0.9em 0.9em 0.9em;
+    border-radius: 10px;
+    border: 1px solid black;
+
+}
+
+#helloadmin{
+    background-color: green;
+    color: white;
+    padding: 0.8em 0.8em 0.8em 0.8em;
+    border-radius: 10px;
+    border: 1px solid black;
+
+}
+
+footer {
+    background-color: #FB8C00;
+}
