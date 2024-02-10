@@ -1,75 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<meta charset="utf-8">
-	<title>
-      Nerd Node
-	</title>
-	<link rel="stylesheet" href="public/css/reset.css">
-	<link rel="stylesheet" href="public/css/site.css">
-  </head>
-  <body>
-	<header>
-	  <h1>
-		Nerd Node.org.com.biz.edu.co.uk.ca
-	  </h1>
-	  <h2>
-		Frontpage
-	  </h2>
-	  <nav>
-		<ul>
-		  <li>
-			<a href="#description">Description</a>
-		  </li>
-		  <li>
-			<a href="#posts">Related Photos</a>
-		  </li>
-		  <li>
-			<a href="/register">Register</a>
-		  </li>
-		</ul>
-	  </nav>
-	</header>
-	<main>
-	  <h3 id="description">
-		Welcome
-	  </h3>
-      <p> The start of something great</p>
-	  <h3 id="posts">
-        Posts
-	  </h3>
-      <div>
-        <h4>
-          GIVE ME UPVOTES. I'M BEGGING YOU.
-        </h4>
-        <p>
-          This is a post. Give me upvotes pls.
-
-          Lorem ipsum and all that find and dandy jazz.
-        </p>
-        <hr>
-        <div>
-
-	</main>
-	<footer>
-	  <div>
-		<a href="#">
-		  Home
-		</a>
-		|
-		<a href="#">
-		  Browse
-		</a>
-		|
-		<a href="#">
-		  Search
-		</a>
-	  </div>
-	  <div>
-		<i>
-		  Copyright © 2017 COSC Lab 2
-		</i>
-	  </div>
-	</footer>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./register_css/register.css">
+</head>
+<body>
+  <header>
+    <h1>Nerd_Node</h1>
+  </header>
+  <div class="background-wrapper">
+    <div class="container">
+      <input type="checkbox" id="check">
+      <div class="login form">
+        <header>Login</header>
+        <form action="#">
+          Email: <input type="text" placeholder="Enter your email">
+          Password: <input type="password" placeholder="***********">
+          <a href="#">Forgot password?</a>
+          <input type="button" class="button" value="Login(User)">
+        </form>
+        <div class="signup">
+          <span class="signup">Don't have an account?
+            <label for="check">Register</label>
+          </span>
+        </div>
+      </div>
+      <div class="registration form">
+        <header>Register</header>
+        <form action="#">
+          <input type="email" placeholder="Enter your email">
+          <input type="password" placeholder="Create a password">
+          <input type="password" placeholder="Confirm your password">
+          <input type="button" class="button" value="Register">
+        </form>
+        <div class="signup">
+          <span class="signup">Already have an account?
+            <label for="check">Login</label>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+	<h4>Copyright Cosc 360</h4>
+	<p>Why we ripped off Reddit</p>
+	<p>Why we'll do it again</p>
+  </footer>
+</body>
 </html>
