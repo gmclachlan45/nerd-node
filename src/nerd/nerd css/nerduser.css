@@ -12,16 +12,6 @@
     text-decoration: underline;
 
 }
-h1, h2{
-    font-size: 3em;
-    color: green;
-}
-
-h2 {
-    background-color: #26C6DA;
-    height: 80px;
-    width: 70%;
-}
 
 #report{
     background-color: green;
@@ -54,4 +44,31 @@ footer h4 {
 
 main {
     border: 1px solid black;
+}
+
+#right-sidebar {
+    float: right;
+}
+
+#posts {
+    background-color: #FF8A65;
+    color: #F06292;
+    margin-top: 1em;
+}
+
+#posts .post {
+    border-bottom: 1px solid black;
+    padding: 1em;
+}
+
+#posts .post h2 {
+    color: black;
+}
+
+#posts .post p {
+    color: black;
+}
+
+#posts .post .votes {
+    color: black;
 }

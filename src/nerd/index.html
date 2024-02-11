@@ -10,10 +10,12 @@
   </head>
   <body>
 	<header>
-	  <h1>
+	  <h1 style="font-size: 3em;
+	  color: green;">
 		Nerd_Node
 	  </h1>
-	  <h2>
+	  <h2 style="font-size: 3em;
+	  color: green; background-color: #26C6DA; height: 80px; width: 70%;">
 		/Nerd/username
 		<button id="report">Report(user)</button>
 		<button id="helloadmin">Hello AdminUser</button>
@@ -34,7 +36,46 @@
 	  </nav>
 	</header>
 	<main>
-		<form style="border-bottom: 1px solid black;  color: #F06292; margin-top: 1em;">Graph.Search()</form>
+		<form id="posts">
+			<div class="post">
+				<h2>Thank you kind nerds!</h2>
+				<p>I was sent a copy of Structure and interpretation of computer programs. I'm gonna be the best hacker</p>
+				<div class="votes">
+					<button>Upvote</button>
+					<button>Downvote</button>
+					<span>Responses</span>
+				</div>
+			</div>
+			<div class="post">
+				<h2>Can I pleas get a copy of Structure and int...</h2>
+				<p>pls. pls. I just want a copy of SICP, but the paper copies are so EXPENSIVE. Anyone feeling  generous?</p>
+				<div class="votes">
+					<button>Upvote</button>
+					<button>Downvote</button>
+					<span>Responses</span>
+				</div>
+			</div>
+			<div class="post">
+				<h2>Test post</h2>
+				<p>My first post on this website</p>
+				<div class="votes">
+					<button>Upvote</button>
+					<button>Downvote</button>
+					<span>Responses</span>
+				</div>
+			</div>
+		</form>
+		<div id="right-sidebar">
+			<h2>Admin Settings</h2>
+			<ol>
+				<li>Will likely pertain to issues that only an admin is allowed to deal with such as</li>
+				<li>Suspending a user</li>
+				<li>Deleting a user outright</li>
+				<li>Removing posts without needing to report</li>
+				<li>changing all the things in the user settings</li>
+			</ol>
+		</div>
+
 
 	</main>
 	<footer>
