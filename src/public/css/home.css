@@ -2,6 +2,18 @@ html {
     font-family: "Hack";
 }
 
+header {
+    padding: 0em 2em;
+}
+header div {
+    padding: 0em 1em;
+}
+#life {
+    background-image: url("public/images/life.png");
+    height:auto:
+    width: 70%;
+}
+
 .center {
     flex: 1;
 }
@@ -9,6 +21,18 @@ html {
 .sidebar {
     flex-grow: 0;
     flex-basis: 30%;
+
+}
+.center, .sidebar, .post{
+    border: medium solid black;
+}
+
+.sidebar div {
+    padding:1em;
+}
+.sidebar h2 {
+    text-align: center;
+    margin: 0.25em 0em
 }
 
 .center, .sidebar {
@@ -17,16 +41,48 @@ html {
 
 main {
     display: flex;
+    margin: 0em 4em;
 }
 
 main div {
-    border-style: solid;
-    border-width: medium;
-    border-color:black;
 }
 
+
+.post {
+    background-color:antiquewhite;
+    margin:1em 0.5em;
+    padding:1em;
+}
+.post p {
+    border-bottom: 2px solid grey;
+}
+
+.post .interactionBar {
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.post div {
+    padding: 0em;
+}
+
+
 #bestPost {
-margin: auto
+    margin: 0.5em 2em;
+    border-bottom: 2px solid black;
+}
+#bestPost .post {
+    max-height: 50%;
+}
+
+
+
+#query {
+    font-size: 1em;
+    text-align:center;
+    border: 0;
+    border-bottom: 2px solid black;
 }
 #submit {
     background-color: green;
@@ -37,6 +93,15 @@ margin: auto
 }
 .searchBar {
     display:flex;
+    border-bottom: 2px dashed black;
+}
+
+.searchBar form, .searchBar .sorter {
+    padding:0.5em;
+    margin:auto;
+}
+form input {
+    margin:0em 0.5em;
 }
 
 .sorter {
@@ -55,37 +120,44 @@ margin: auto
     text-decoration: none;
 }
 
-#sorter a:hover, .sorter #sortedBy {
+.sorter  a:hover, .sorter #sortedBy {
     text-decoration: underline;
-    color:blue;
 }
-h1, h2{
-    font-size: 3em;
+
+
+
+h1{
+    font-size: 5em;
     color: green;
 }
+h2 {
+    font-size: 2em;
+}
+h3 {
+    font-size:1.5em;
+    font-weight:bold;
+
+}
+
 .navbar {
     display:flex;
     background-color: #26C6DA;
-    height: 80px;
+
 
 }
 .spacer {
     flex:1;
 }
-#life {
-    background-image: url("public/images/life.png");
-    width: 70%;
-}
-h2 {
-
-}
 
 .buttonBox {
     width:20%;
-    border-style: solid;
-    border-width: medium;
-    border-color:black;
-    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.buttonBox button {
+
 }
 button{
     background-color: green;
