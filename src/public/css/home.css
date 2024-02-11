@@ -1,32 +1,95 @@
-#navbar ul {
-    list-style-type: none;
+html {
+    font-family: "Hack";
 }
 
-#navbar a {
+.center {
+    flex: 1;
+}
+
+.sidebar {
+    flex-grow: 0;
+    flex-basis: 30%;
+}
+
+.center, .sidebar {
+    margin: 2em 2em;
+}
+
+main {
+    display: flex;
+}
+
+main div {
+    border-style: solid;
+    border-width: medium;
+    border-color:black;
+}
+
+#bestPost {
+margin: auto
+}
+#submit {
+    background-color: green;
+    color: white;
+    padding: 0.9em 0.9em 0.9em 0.9em;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.searchBar {
+    display:flex;
+}
+
+.sorter {
+
+}
+.sorter ul {
+    list-style-type: none;
+    display: flex;
+}
+.sorter li {
+    margin: 0em 1em;
+}
+
+.sorter a {
     color: black;
     text-decoration: none;
-
 }
 
-#navbar a:hover {
+#sorter a:hover, .sorter #sortedBy {
     text-decoration: underline;
-
+    color:blue;
 }
 h1, h2{
     font-size: 3em;
     color: green;
 }
-
-h2 {
+.navbar {
+    display:flex;
     background-color: #26C6DA;
     height: 80px;
+
+}
+.spacer {
+    flex:1;
+}
+#life {
+    background-image: url("public/images/life.png");
     width: 70%;
 }
+h2 {
 
+}
+
+.buttonBox {
+    width:20%;
+    border-style: solid;
+    border-width: medium;
+    border-color:black;
+    margin:auto;
+}
 button{
     background-color: green;
     color: white;
-    margin-left: 25em;
     padding: 0.9em 0.9em 0.9em 0.9em;
     border-radius: 10px;
     border: 1px solid black;

@@ -7,6 +7,7 @@
 	</title>
 	<link rel="stylesheet" href="public/css/reset.css">
 	<link rel="stylesheet" href="public/css/home.css">
+    <link rel="stylesheet" href="public/font/hack.css">
   </head>
   <body>
 	<header>
@@ -16,35 +17,58 @@
 	    </h1>
         <div id="life"/>
       </div>
-      <div>
+      <div class="navbar">
         <h2>
 	      /Home
         </h2>
-        <div class="spacer"/>
-          <div>
-		<button id="newPost">Insert(Node)</button>
-		<button id="login" onclick="location.href = 'register';">Hello AdminUser</button>
-<div>
-      </div>
+        <div class="spacer">
+        </div>
+        <div class="buttonBox">
+		  <button id="newPost">Insert(node)</button>
+		  <button id="login" onclick="location.href = 'register';">Login(self)</button>
+        </div>
     </header>
-	  <p>Sort by:</p>
-	  <nav id="navbar">
-		<ul>
-		  <li>
-			<a href="#Recent">Recent</a>
-		  </li>
-		  <li>
-			<a href="#Hot">Hot</a>
-		  </li>
-		  <li>
-			<a href="#Most_Comments">Most Comments</a>
-		  </li>
-		</ul>
-	  </nav>
 
-	<main>
-	  <form style="border-bottom: 1px solid black;  color: #F06292; margin-top: 1em;">Graph.Search()</form>
+    <main>
+      <div class="center">
+        <div class="searchBar">
+	      <form style="border-bottom: 1px solid black;  color: #F06292; margin-top: 1em;">
+            <input type="text" id="q" name="search" placeholder="Graph.Search()">
+            <input type="submit" id="submit" name="search">
+          </form>
+          <div class="spacer">
+          </div>
+          <div class="sorter">
+	        <ul>
+              <li>Sort by:</li>
+		      <li>
+		        <a href="#Recent" class="sortedBy">Recent</a>
+		      </li>
+		      <li>
+		        <a href="#Hot">Hot</a>
+		      </li>
+		      <li>
+		        <a href="#Most_Comments">Most Comments</a>
+		      </li>
+	        </ul>
+          </div>
+        </div>
+      </div>
 
+      <div class="sidebar">
+        <div id="bestPost">
+          <div class="post">
+            <h3>
+              BestPost title and whatnot
+            </h3>
+            <p>Postauthor</p>
+            <p>
+              Lorem ipsum noet ho nethuone ua n eoo e hasut aseo taheo uthoeuntho eo netahenth uoen tuhaeo ntheo nah eant heoaoe nteo hntoh
+            </p>
+          </div>
+        </div>
+
+      </div>
 	</main>
 	<footer>
 	  <h4>Copyright COSC 360
