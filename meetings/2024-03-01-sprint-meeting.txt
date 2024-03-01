@@ -1,0 +1,10 @@
+Meeting 4
+March 1st, 2024
+Meeting Start
+- Everyone here, no one is sick.
+Meeting Overview:
+- Herman will work on forms for admin and user on nerd page
+- Sawneet will work on forms for register and login page
+- Gabriel will be working on node page
+- Meeting next Wednesday
+Meeting Adjourned.
