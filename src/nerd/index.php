@@ -84,7 +84,7 @@
   <!-- Admin Settings Form -->
   <div id="admin-settings-form">
     <h2>Admin Settings</h2>
-    <form action="admin_actions.php" method="post">
+    <form action="http://www.randyconnolly.com/tests/process.php" method="post">
       <label for="suspend-user">Suspend User:</label>
       <input type="text" id="suspend-user" name="suspend-user" placeholder="Enter username">
       <br>
@@ -98,7 +98,7 @@
   <!-- User Settings Form -->
   <div id="user-settings-form">
     <h2>User Settings</h2>
-    <form action="user_actions.php" method="post">
+    <form action="http://www.randyconnolly.com/tests/process.php" method="post">
       <label for="edit-username">Edit Username:</label>
       <input type="text" id="edit-username" name="edit-username" placeholder="Enter new username">
       <br>
