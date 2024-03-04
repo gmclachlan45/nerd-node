@@ -19,11 +19,6 @@
     border: 1px solid black;
 }
 
-#report a {
-    color: white;
-    text-decoration: none;
-}
-
 #helloadmin{
     background-color: green;
     padding: 0.8em 0.8em 0.8em 0.8em;
@@ -31,7 +26,14 @@
     border: 1px solid black;
 }
 
-#helloadmin a {
+#createpost {
+    background-color: green;
+    padding: 0.8em 0.8em 0.8em 0.8em;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#report a, #helloadmin a, #createpost a {
     color: white;
     text-decoration: none;
 }

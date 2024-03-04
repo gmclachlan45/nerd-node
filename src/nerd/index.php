@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Nerd Node</title>
-    <link rel="stylesheet" href="public/css/reset.css">
     <link rel="stylesheet" type="text/css" href="./nerd css/nerduser.css">
+    <link rel="stylesheet" href="public/css/reset.css">
   </head>
   <body>
     <header>
@@ -12,7 +12,8 @@
       <h2 style="font-size: 3em; color: green; background-color: #26C6DA; height: 80px; width: 100%;">
         /Nerd/username
         <button id="report"><a href=#report>Report(user)</a></button>
-        <button id="helloadmin"><a href="helloadmin">Hello AdminUser</a></button>
+        <button id="helloadmin"><a href="#helloadmin">Hello AdminUser</a></button>
+        <button id="createpost"><a href="/index.html">Create Post</a></button>
       </h2>
     </header>
 	<main>
@@ -79,27 +80,44 @@
           </div>
         </div>
 	</form>
-	<div id="right-sidebar">
-	  <h2>Admin Settings</h2>
-	  <ol class="admin-settings">
-		<li>Will likely pertain to issues that only an admin is allowed to deal with such as</li>
-		<li>Suspending a user</li>
-		<li>Deleting a user outright</li>
-		<li>Removing posts without needing to report</li>
-		<li>changing all the things in the user settings</li>
-	  </ol>
-	  <div id="right-sidebar2">
-		<h2>User Settings</h2>
-		<ol>
-		  <li>TBD but most of these will be editable by both an admin and the user. <br> So expect things like: </li>
-		  <li>Edit username ______</li>
-		  <li>Edit Password ______</li>
-		  <li>Edit Email ______</li>
-		  <li>Edit Visibility ______</li>
-		  <li>Delete posts ______</li>
-		</ol>
-	</div>
+  <div id="right-sidebar">
+  <!-- Admin Settings Form -->
+  <div id="admin-settings-form">
+    <h2>Admin Settings</h2>
+    <form action="admin_actions.php" method="post">
+      <label for="suspend-user">Suspend User:</label>
+      <input type="text" id="suspend-user" name="suspend-user" placeholder="Enter username">
+      <br>
+      <label for="delete-user">Delete User:</label>
+      <input type="text" id="delete-user" name="delete-user" placeholder="Enter username">
+      <br>
+      <input type="submit" value="Submit Admin Changes">
+    </form>
   </div>
+
+  <!-- User Settings Form -->
+  <div id="user-settings-form">
+    <h2>User Settings</h2>
+    <form action="user_actions.php" method="post">
+      <label for="edit-username">Edit Username:</label>
+      <input type="text" id="edit-username" name="edit-username" placeholder="Enter new username">
+      <br>
+      <label for="edit-password">Edit Password:</label>
+      <input type="password" id="edit-password" name="edit-password" placeholder="Enter new password">
+      <br>
+      <label for="edit-email">Edit Email:</label>
+      <input type="email" id="edit-email" name="edit-email" placeholder="Enter new email">
+      <br>
+      <label for="edit-visibility">Edit Visibility:</label>
+      <select id="edit-visibility" name="edit-visibility">
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+      </select>
+      <br>
+      <input type="submit" value="Submit User Changes">
+    </form>
+  </div>
+</div>
 </main>
 	<footer>
 		<h4>Copyright COSC 360
