@@ -3,37 +3,24 @@
         <h2>
             Today's Best Post
         </h2>
-        <div class="post">
-            <h3>
-                BestPost title and whatnot
-            </h3>
-            <p>Postauthor</p>
-            <p>
-                Lorem ipsum noet ho nethuone ua n eoo e hasut aseo taheo uthoeuntho eo netahenth uoen tuhaeo ntheo nah eant heoaoe nteo hntoh
-            </p>
-            <div class="interactionBar">
-                <div> &uarr; </div>
-                <div> 42,000,282 </div>
-                <div> &darr; </div>
-                <div> <a href="/node?title=sku">Responses (42)</a> </div>
-            </div>
-        </div>
+        <?php
+        include "../renderPosts.php";
+        include "getBestPost.php";
+        renderPost($bestPost);
+        ?>
     </div>
     <div>
         <h2>
             The Rules of Nerd_Node
         </h2>
 	    <ol>
-		    <li> No fussin' </li>
-            <li> No fussin' </li>
-            <li> No fussin' </li>
-            <li> No fussin' </li>
-            <li> No fussin' </li>
-            <li> No fussin' </li>
-            <li> No fussin' </li>
-            <li> No fussin' </li>
-            <li> No fussin' </li>
-
+		    <li> Stay on Topic - This site is about Computer Science and it's related material </li>
+            <li> Respectful Communication - It's fine to disagree, but dont make it personal</li>
+            <li> No Flamewars - No Python vs Rust or Apple vs Windows</li>
+            <li> No Spamming - Repeated/unoriginal posts will be deleted</li>
+            <li> No Shilling - This is not a place to sell your products </li>
+            <li> Stay Safe - Don't share content that could be used to identify you </li>
+            <li> No Illegal Content - Do not post anything that violates copyright or Canadian law.</li>
         </ol>
         <p>Failure to abide by these rules may result in the deletion of your posts and/or account.</p>
     </div>
