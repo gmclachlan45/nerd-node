@@ -16,7 +16,7 @@
       <input type="checkbox" id="check">
       <div class="login form">
         <header>Login</header>
-        <form action="#">
+        <form action="http://www.randyconnolly.com/tests/process.php" method="post">
           Email: <input type="text" placeholder="Enter your email">
           Password: <input type="password" placeholder="***********">
           <a href="#">Forgot password?</a>
@@ -30,10 +30,10 @@
       </div>
       <div class="registration form">
         <header>Register</header>
-        <form action="#">
-          <input type="email" placeholder="Enter your email">
-          <input type="password" placeholder="Create a password">
-          <input type="password" placeholder="Confirm your password">
+        <form action="http://www.randyconnolly.com/tests/process.php" method="post">
+          Email: <input type="email" placeholder="Enter your email" required pattern="">
+          Password: <input type="password" placeholder="Create a password" required pattern="">
+          Confirm Password: <input type="password" placeholder="Confirm your password" required pattern="">
           <input type="button" class="button" value="Register">
         </form>
         <div class="signup">
