@@ -39,8 +39,6 @@
 
         <main>
             <div class="center">
-
-
             <div class="original post">
                 <h3>
                     <?php echo $title;?>

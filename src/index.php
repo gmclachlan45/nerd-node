@@ -8,6 +8,8 @@
 	    <link rel="stylesheet" href="public/css/reset.css">
 	    <link rel="stylesheet" href="public/css/home.css">
         <link rel="stylesheet" href="public/font/hack.css">
+
+        <?php include "renderPosts.php" ?>
     </head>
     <body>
 	    <header>
@@ -54,90 +56,18 @@
 	                    </ul>
                     </div>
                 </div>
-                <div class="post">
-                    <h3>
-                        BestPost title and whatnot
-                    </h3>
-                    <p>Postauthor</p>
-                    <p>
-                        Lorem ipsum noet ho nethuone ua n eoo e hasut aseo taheo uthoeuntho eo netahenth uoen tuhaeo ntheo nah eant heoaoe nteo hntoh
-                    </p>
-                    <div class="interactionBar">
-                        <div> &uarr; </div>
-                        <div> 42,000,282 </div>
-                        <div> &darr; </div>
-                        <div> <a href="/node?title=sku">Responses (42)</a> </div>
-                        <div class="spacer"> </div>
-                        <div> Report this user </div>
-                    </div>
-                </div>
-                <div class="post">
-                    <h3>
-                        BestPost title and whatnot
-                    </h3>
-                    <p>Postauthor</p>
-                    <p>
-                        Lorem ipsum noet ho nethuone ua n eoo e hasut aseo taheo uthoeuntho eo netahenth uoen tuhaeo ntheo nah eant heoaoe nteo hntoh
-                    </p>
-                    <div class="interactionBar">
-                        <div> &uarr; </div>
-                        <div> 42,000,282 </div>
-                        <div> &darr; </div>
-                        <div> <a href="/node?title=sku">Responses (42)</a> </div>
-                        <div class="spacer"> </div>
-                        <div> Report this user </div>
-                    </div>
-                </div>
-                <div class="post">
-                    <h3>
-                        BestPost title and whatnot
-                    </h3>
-                    <p>Postauthor</p>
-                    <p>
-                        Lorem ipsum noet ho nethuone ua n eoo e hasut aseo taheo uthoeuntho eo netahenth uoen tuhaeo ntheo nah eant heoaoe nteo hntoh
-                    </p>
-                    <div class="interactionBar">
-                        <div> &uarr; </div>
-                        <div> 42,000,282 </div>
-                        <div> &darr; </div>
-                        <div> <a href="/node?title=sku">Responses (42)</a> </div>
-                        <div class="spacer"> </div>
-                        <div> Report this user </div>
-                    </div>
-                </div>
-                <div class="post">
-                    <h3>
-                        BestPost title and whatnot
-                    </h3>
-                    <p>Postauthor</p>
-                    <p>
-                        Lorem ipsum noet ho nethuone ua n eoo e hasut aseo taheo uthoeuntho eo netahenth uoen tuhaeo ntheo nah eant heoaoe nteo hntoh
-                    </p>
-                    <div class="interactionBar">
-                        <div> &uarr; </div>
-                        <div> 42,000,282 </div>
-                        <div> &darr; </div>
-                        <div> <a href="/node?title=sku">Responses (42)</a> </div>
-                        <div class="spacer"> </div>
-                        <div> Report this user </div>
-                    </div>
-                </div>
-                <div class="post">
-                    <h3>
-                        BestPost title and whatnot
-                    </h3>
-                    <p>Postauthor</p>
-                    <p>
-                        Lorem ipsum noet ho nethuone ua n eoo e hasut aseo taheo uthoeuntho eo netahenth uoen tuhaeo ntheo nah eant heoaoe nteo hntoh
-                    </p>
-                    <div class="interactionBar">
-                        <div> &uarr; </div>
-                        <div> 42,000,282 </div>
-                        <div> &darr; </div>
-                        <div> <a href="/node?title=sku">Responses (42)</a> </div>
-                        <div class="spacer"> </div>
-                        <div> Report this user </div>
-                    </div>
+                <?php
+                for($i = 0; $i < 8; $i++) {
+                    // in real site will be a for post in posts from db,
+                    renderPost(['title' => "I AM A POST",
+                                'author' => $i,
+                                'sku' => 'i-am-a-post-'.$i,
+                                'content' => "LOENUTHO ENHU OENTU HEONT HEONU THU notehunote hone tuhoe ntuho eathoaes thasnteou honet huonte huneot hueou oeuneou  ueo ueo ueonth ueoh nteoh unteoh ntuhoentuheo ntuheont huont hent",
+                                'likes' => number_format(52474725742),
+                                'commentCount' => $i*4
+                    ]);
+                }
+                ?>
                 </div>
             </div>
             <?php include "components/sidebar.php"; ?>
