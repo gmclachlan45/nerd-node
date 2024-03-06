@@ -21,15 +21,14 @@ body{
   width: 100%;
   border: 1px solid black;
   border-radius: 7px;
-
 }
-.container .registration{
+.container .registration.form{
   display: none;
 }
-#check:checked ~ .registration{
+#check:checked ~ .container .registration.form{
   display: block;
 }
-#check:checked ~ .login{
+#check:checked ~ .container .login.form{
   display: none;
 }
 #check{
@@ -45,7 +44,7 @@ body{
   text-align: center;
   margin-bottom: 1.5rem;
 }
- .form input{
+.form input{
    height: 60px;
    width: 100%;
    padding: 0 15px;
@@ -54,8 +53,7 @@ body{
    border: 1px solid #ddd;
    border-radius: 6px;
    outline: none;
- }
-
+}
 .form a{
   font-size: 16px;
   color: black;
