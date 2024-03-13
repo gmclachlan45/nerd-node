@@ -55,6 +55,7 @@ main div {
 }
 .post p {
     border-bottom: 2px solid grey;
+    word-break: break-all;
 }
 
 .post .interactionBar {

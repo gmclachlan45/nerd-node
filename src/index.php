@@ -46,13 +46,13 @@
 	                    <ul>
                             <li>Sort by:</li>
 		                    <li>
-		                        <a href="#Recent">Recent</a>
+		                        <a href="/?o=recent" id="sortedBy">Recent</a>
 		                    </li>
 		                    <li>
-		                        <a href="#Hot" id="sortedBy">Hot</a>
+		                        <a href="/?o=hot">Hot</a>
 		                    </li>
 		                    <li>
-		                        <a href="#Most_Comments">Most Comments</a>
+		                        <a href="/?o=comments">Most Comments</a>
 		                    </li>
 	                    </ul>
                     </div>
