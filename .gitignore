@@ -29,7 +29,7 @@ wp-config.php
 
 # Uploads
 /wp-content/uploads/
-
+/src/public/images/profiles/*
 # Log files
 *.log
 
