@@ -19,7 +19,7 @@
         </div>
         <div class='spacer'> </div>
         <div>
-            <a href='/report'> Report this user</a>
+            <a href='/report'> Report user</a>
         </div>
     </div>
 </div>";
