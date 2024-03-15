@@ -13,7 +13,7 @@
         /Nerd/username
         <button id="report"><a href=#report>Report(user)</a></button>
         <button id="helloadmin"><a href="#helloadmin">Hello AdminUser</a></button>
-        <button id="createpost"><a href="/index.html">Create Post</a></button>
+        <button id="createpost"><a href="/">Create Post</a></button>
       </h2>
     </header>
 	<main>
