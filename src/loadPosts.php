@@ -1,5 +1,4 @@
 <?php
-include "../config.php";
 $host = DBHOST;
 $database = DBNAME;
 $user = DBUSER;

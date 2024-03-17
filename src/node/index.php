@@ -8,6 +8,7 @@
 	    <link rel="stylesheet" href="../public/css/reset.css">
 	    <link rel="stylesheet" href="../public/css/home.css">
         <link rel="stylesheet" href="../public/font/hack.css">
+        <?php include "../../config.php"; ?>
         <?php
         $post_id = 25;
         $title = "Best pos am i crazy";

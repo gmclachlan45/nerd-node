@@ -5,6 +5,7 @@
     <title>Nerd Node</title>
     <link rel="stylesheet" type="text/css" href="./nerd css/nerduser.css">
     <link rel="stylesheet" href="public/css/reset.css">
+    <?php include "../../config.php"; ?>
   </head>
   <body>
     <header>

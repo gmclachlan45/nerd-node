@@ -6,6 +6,8 @@
   <title>Register</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./register_css/register.css">
+
+  <?php include "../../config.php"; ?>
 </head>
 <body>
   <header>
@@ -46,8 +48,8 @@
   </div>
   <footer>
     <h4>Copyright Cosc 360</h4>
-    <p>Why we ripped off Reddit</p>
-    <p>Why we'll do it again</p>
+    <a href='<?php echo SITEROOT;?>'>Why we ripped off Reddit</a>
+    <a href='<?php echo SITEROOT;?>'>Why we'll do it again</a>
   </footer>
   <script src="index.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"

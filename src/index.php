@@ -8,9 +8,9 @@
 	    <link rel="stylesheet" href="public/css/reset.css">
 	    <link rel="stylesheet" href="public/css/home.css">
         <link rel="stylesheet" href="public/font/hack.css">
+        <?php include "../config.php"; ?>
         <?php include "loadPosts.php" ?>
         <?php include "renderPosts.php" ?>
-
     </head>
     <body>
 	    <header>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="buttonBox">
 		            <button id="newPost">Insert(node)</button>
-		            <button id="login" onclick="location.href = 'register';">Login(self)</button>
+		            <button id="login" onclick="location.href = 'login';">Login(self)</button>
                 </div>
         </header>
 
@@ -46,13 +46,13 @@
 	                    <ul>
                             <li>Sort by:</li>
 		                    <li>
-		                        <a href="/?o=recent" id="sortedBy">Recent</a>
+		                        <a href="<?php echo SITEROOT;?>?o=recent" id="sortedBy">Recent</a>
 		                    </li>
 		                    <li>
-		                        <a href="/?o=hot">Hot</a>
+		                        <a href="<?php echo SITEROOT;?>?o=hot">Hot</a>
 		                    </li>
 		                    <li>
-		                        <a href="/?o=comments">Most Comments</a>
+		                        <a href="<?php echo SITEROOT;?>?o=comments">Most Comments</a>
 		                    </li>
 	                    </ul>
                     </div>
