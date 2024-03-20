@@ -10,11 +10,11 @@
   <body>
     <header>
       <h1 style="font-size: 3em; color: green;">Nerd_Node</h1>
-      <h2 style="font-size: 3em; color: green; background-color: #26C6DA; height: 80px; width: 100%;">
+      <h2 style="display: flex; align-items: center; justify-content: space-between;  font-size: 3em; color: green; background-color: #26C6DA; height: 80px; width: 100%;">
         /Nerd/username
+        <button id="createpost"><a href="/">Create Post</a></button>
         <button id="report"><a href=#report>Report(user)</a></button>
         <button id="helloadmin"><a href="#helloadmin">Hello AdminUser</a></button>
-        <button id="createpost"><a href="/">Create Post</a></button>
       </h2>
     </header>
 	<main>
