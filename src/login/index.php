@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./register_css/register.css">
 
-  <?php include "../../config.php"; ?>
+  <?php include_once "../../config.php"; ?>
 </head>
 <body>
   <header>

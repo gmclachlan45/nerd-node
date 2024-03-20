@@ -1,15 +1,16 @@
-<?php function renderPost($post) {
-
+<?php 
+function renderPost($post) {
+    $username = $post['author'];
     $commentText = $post['commentCount'] ? "Leave a comment (".$post['commentCount'].")" : "Be the first to comment";
     echo "<div class=\"post\">
     <h3>
             <a href='".SITEROOT."node?title=".$post['sku']."'>".$post['title']."</a>
     </h3>
     <p>
-            <a href='".SITEROOT."nerd?title=".$post['author']."'>".$post['author']."</a>
+            <a href='".SITEROOT."nerd?username=".$username."'>".$username."</a>
     </p>
     <p>".$post['content']."
-    </p>
+    </p>        
     <div class='interactionBar'>
         <div> &uarr; </div>
         <div>".$post['likes']." </div>

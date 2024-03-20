@@ -1,6 +1,4 @@
 <?php
-// include "config.php";
-include "..\\config.php";
 $host = DBHOST;
 $database = DBNAME;
 $user = DBUSER;
@@ -16,7 +14,8 @@ include "getQueries.php";
 $sql = "SELECT post.title, siteUser.username, post.sku, post.content,
                post.likes, COUNT(comment.id) AS comments, (ABS(post.likes)) AS heat
         FROM (post JOIN siteUser ON post.poster = siteUser.id)
-             LEFT JOIN comment ON comment.originalPost = post.id
+             LEFT JOIN comment ON comment.originalPost = post.id 
+        WHERE siteUser.username = '$username'
         GROUP BY post.id $orderBy";
 echo $orderBy;
 

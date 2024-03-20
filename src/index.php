@@ -8,9 +8,9 @@
 	    <link rel="stylesheet" href="public/css/reset.css">
 	    <link rel="stylesheet" href="public/css/home.css">
         <link rel="stylesheet" href="public/font/hack.css">
-        <?php include "../config.php"; ?>
-        <?php include "loadPosts.php" ?>
-        <?php include "renderPosts.php" ?>
+        <?php include_once "../config.php"; ?>
+        <?php include_once "loadPosts.php" ?>
+        <?php include_once "renderPosts.php" ?>
     </head>
     <body>
 	    <header>

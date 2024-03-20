@@ -4,9 +4,9 @@
             Today's Best Post
         </h2>
         <?php
-        include "../renderPosts.php";
+        include_once "../renderPosts.php";
         include "getBestPost.php";
-        renderPost($bestPost);
+         renderPost($bestPost);
         ?>
     </div>
     <div>
