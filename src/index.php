@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,23 +15,7 @@
     </head>
     <body>
 	    <header>
-            <div>
-	            <h1>
-		            Nerd_Node
-	            </h1>
-                <div id="life">
-                </div>
-            </div>
-            <div class="navbar">
-                <h1>
-	                /Home
-                </h1>
-                <div class="spacer">
-                </div>
-                <div class="buttonBox">
-		            <button id="newPost">Insert(node)</button>
-		            <button id="login" onclick="location.href = 'login';">Login(self)</button>
-                </div>
+            <?php include "components/headerBar.php"; ?>
         </header>
 
         <main>
