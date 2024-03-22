@@ -17,14 +17,14 @@
             <button id="newPost">Make Post</button>
             <?php
             if(isset($_SESSION["sessionId"]) ) {
-                echo "<button id='home' onclick='location.href = \"nerd?username=".$_SESSION["sessionUsername"]."\";' >".
+                echo "<button id='home' onclick='location.href = \"".SITEROOT."nerd?username=".$_SESSION["sessionUsername"]."\";' >".
                      $_SESSION["sessionUsername"]
                     ."</button>";
-                echo "<button id='logout' onclick='location.href = \"logout.php\";' >
+                echo "<button id='logout' onclick='location.href = \"".SITEROOT."logout.php\";' >
                       Log out
                   </button>";
             } else {
-                echo "<button id='login' onclick='location.href = \"login\";' >
+                echo "<button id='login' onclick='location.href = \"".SITEROOT."login\";' >
                       Login/Register
                   </button>";
             }
