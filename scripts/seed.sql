@@ -1,7 +1,8 @@
 -- CREATE DATABASE nerdnode; --
 
 use nerdnode;
-
+DROP TABLE postTag;
+DROP TABLE userSession;
 DROP TABLE commentReport;
 DROP TABLE postReport;
 DROP TABLE comment;
@@ -65,13 +66,21 @@ CREATE TABLE userSession (
     FOREIGN KEY (userId) REFERENCES siteUser(id)
 );
 
+CREATE TABLE postTag (
+    id int AUTO_INCREMENT,
+    tagName varchar(63),
+    postId int,
+    PRIMARY KEY (id),
+    FOREIGN KEY (postId) REFERENCES post(id)
+);
+
 INSERT INTO siteUser
 VALUES
-(1, 'admin', 'admin', 'admin@gmail.com', 'default.png', true, false),
-(2, 'user1', 'password', 'user1@gmail.com', 'default.png', false, false),
-(3, 'user2', 'password', 'user2@gmail.com', 'default.png', false, false),
-(4, 'user3', 'password', 'user3@gmail.com', 'default.png', false, false),
-(5, 'user4', 'password', 'user4@gmail.com', 'default.png', false, false);
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@gmail.com', 'default.png', true, false),
+(2, 'user1', '5f4dcc3b5aa765d61d8327deb882cf99', 'user1@gmail.com', 'default.png', false, false),
+(3, 'user2', '5f4dcc3b5aa765d61d8327deb882cf99', 'user2@gmail.com', 'default.png', false, false),
+(4, 'user3', '5f4dcc3b5aa765d61d8327deb882cf99', 'user3@gmail.com', 'default.png', false, false),
+(5, 'user4', '5f4dcc3b5aa765d61d8327deb882cf99', 'user4@gmail.com', 'default.png', false, false);
 
 INSERT INTO post
 VALUES
