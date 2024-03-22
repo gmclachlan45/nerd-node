@@ -18,8 +18,8 @@
       <input type="checkbox" id="check">
       <div class="login form">
         <header>Login</header>
-        <form name="loginForm" onsubmit="return validateLoginForm()" method="post">
-          Email: <input type="text" name="name" id="logName" placeholder="Enter your email">
+        <form name="loginForm" action="loginuser.php" onsubmit="return validateLoginForm()" method="post">
+          Email: <input type="text" name="email" id="logName" placeholder="Enter your email">
           Password: <input type="password" name="password" id="logPassword" placeholder="***********">
           <a href="#">Forgot password?</a>
           <input type="submit" class="button" value="Login(User)">
