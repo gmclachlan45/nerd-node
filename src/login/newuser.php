@@ -12,9 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["email"]) && isset($_PO
         $email = $_POST["email"];
         $password = md5($_POST["password"]);
         $username = $_POST["username"];
-
+        $isAdmin = false;
+        $isDisabled=false;
         // Check if user already exists
-        $checkUser = $connection->prepare("SELECT * FROM siteuser WHERE email = ?");
+        $checkUser = $connection->prepare("SELECT * FROM siteUser WHERE email = ?");
         $checkUser->bind_param("s", $email);
         $checkUser->execute();
         $result = $checkUser->get_result();
@@ -22,11 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["email"]) && isset($_PO
             echo "User already exists with this email.";
             die;
         }
-        
+
         // Default profile picture
         $profile_picture = "default.png";
 
-        $sql = $connection->prepare("INSERT INTO siteuser (username, password, email, profilePicture, isAdmin, isDisabled) VALUES (?, ?, ?, ?, ?, ?)");
+        $sql = $connection->prepare("INSERT INTO siteUser (username, password, email, profilePicture, isAdmin, isDisabled) VALUES (?, ?, ?, ?, ?, ?)");
         $sql->bind_param("ssssii", $username, $password, $email, $profile_picture, $isAdmin, $isDisabled);
         if($sql->execute()) {
             echo "An account for the user $email has been created";
@@ -36,7 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["email"]) && isset($_PO
             echo "Error: " . $sql . "<br>" . mysqli_error($connection);
         }
         mysqli_close($connection);
-        die;
+        die();
     }
 }
+
+
 ?>

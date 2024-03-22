@@ -58,6 +58,13 @@ CREATE TABLE commentReport (
     FOREIGN KEY (reportedComment) REFERENCES comment(id)
 );
 
+CREATE TABLE userSession (
+    id varchar(63),
+    userId int,
+    PRIMARY KEY (id),
+    FOREIGN KEY (userId) REFERENCES siteUser(id)
+);
+
 INSERT INTO siteUser
 VALUES
 (1, 'admin', 'admin', 'admin@gmail.com', 'default.png', true, false),
