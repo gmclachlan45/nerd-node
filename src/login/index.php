@@ -32,7 +32,8 @@
       </div>
       <div class="registration form">
         <header>Register</header>
-        <form name="registerForm" onsubmit="return validateRegisterForm()" method="post">
+        <form name="registerForm" action="newuser.php" onsubmit="return validateRegisterForm()" method="post">
+          Username: <input type="username" name="username" id="username" placeholder="Username" autocomplete="off">
           Email: <input type="email" name="email" id="registerEmail" placeholder="Enter your email" autocomplete="off">
           Password: <input type="password" name="password" id="registerPassword" placeholder="Create a password" autocomplete="off">
           Confirm Password: <input type="password" placeholder="Confirm your password" autocomplete="off">

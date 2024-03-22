@@ -71,8 +71,9 @@ form {
 }
 
 #posts {
-    /* background-color: #FF8A65;
-    color: #F06292; */
+    border: medium solid black;
+    background-color: antiquewhite;
+    color: #F06292;
     margin-top: 1em;
 }
 
