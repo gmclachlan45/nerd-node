@@ -34,9 +34,12 @@ body{
 #check{
   display: none;
 }
-.container .form{
+
+.container .form {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.8);
+  height: 400px; 
+  overflow-y: auto;
 }
 .form header{
   font-size: 2rem;
