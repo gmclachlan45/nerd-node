@@ -1,5 +1,8 @@
-<footer>
-	<h4> Copyright COSC 360 </h4>
-	<p style="margin-left: 50em;">Why we ripped off Reddit</p>
-	<p style="margin-left: 50em;">Why we'll do it again</p>
-</footer>
+<!DOCTYPE html>
+<html lang="en">
+    <footer>
+    <h4>Copyright Cosc 360</h4>
+    <a href='<?php echo SITEROOT;?>'>Why we ripped off Reddit</a>
+    <a href='<?php echo SITEROOT;?>'>Why we'll do it again</a>
+    </footer>
+</html>

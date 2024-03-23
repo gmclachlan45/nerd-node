@@ -9,7 +9,7 @@
     </div>
     <div class="navbar">
         <h1>
-            /Home
+            <?php echo $url ?? '/HOME'; ?>
         </h1>
         <div class="spacer">
         </div>

@@ -17,7 +17,10 @@ $username = $_GET['username'];
     </head>
     <body>
         <header>
-            <?php include "../components/headerBar.php"; ?>
+            <?php
+            $url = "/NERD/$username";
+            include "../components/headerBar.php";
+            ?>
         </header>
 	    <main>
 

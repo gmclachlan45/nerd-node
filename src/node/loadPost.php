@@ -37,10 +37,6 @@ while($row = mysqli_fetch_assoc($result)) {
 
 }
 
-echo $post['id'];
-// Do comments then
-
-
 $getComments = $connection->prepare("SELECT p1.id AS id, p2.id AS parentId, siteUser.username as username, p1.content AS content, p2.content AS parentContent, p1.likes
 FROM comment AS p1 LEFT JOIN comment AS p2 ON p1.parentComment = p2.id JOIN siteUser ON p1.poster = siteUser.id WHERE p1.originalPost = ?");
 
@@ -49,7 +45,6 @@ $getComments->execute();
 $result = $getComments->get_result();
 
 $comments = array();
-echo "here";
 
 while($row = mysqli_fetch_assoc($result)) {
     array_push($comments, [

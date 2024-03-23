@@ -11,7 +11,10 @@
 </head>
 <body>
   <header>
-    <h1>Nerd_Node</h1>
+    <?php
+     $url = "/LOGIN";
+     include "../components/headerBar.php";
+     ?>
   </header>
   <div class="background-wrapper">
     <div class="container">
@@ -47,11 +50,7 @@
       </div>
     </div>
   </div>
-  <footer>
-    <h4>Copyright Cosc 360</h4>
-    <a href='<?php echo SITEROOT;?>'>Why we ripped off Reddit</a>
-    <a href='<?php echo SITEROOT;?>'>Why we'll do it again</a>
-  </footer>
+  <?php include "../components/footer.php"; ?>
   <script src="index.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

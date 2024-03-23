@@ -20,26 +20,11 @@ include_once "renderComments.php";
     </head>
     <body>
 	    <header>
-            <?php include "../components/headerBar.php"; ?>
-            <!--
-                 <div>
-	             <h1>
-		         Nerd_Node
-	             </h1>
-                 <div id="life">
-                 </div>
-                 </div>
-                 <div class="navbar">
-                 <h1>
-	             /Node/<?php echo strlen($post["sku"]) >12 ? trim(substr($post["sku"], 0, 12)).'...' : $post["sku"]; ?>
-                 </h1>
-                 <div class="spacer">
-                 </div>
-                 <div class="buttonBox">
-		         <button id="newPost">Insert(node)</button>
-		         <button id="login" onclick="location.href = 'register';">Login(self)</button>
-                 </div>
-            -->
+            <?php
+            $u =strlen($post["sku"]) >12 ? trim(substr($post["sku"], 0, 12)).'...' : $post["sku"];
+            $url = "/NODE/$u";
+            include "../components/headerBar.php";
+            ?>
         </header>
 
         <main>
@@ -79,7 +64,7 @@ include_once "renderComments.php";
                             renderComment($comment);
                         }
                     } else {
-                        echo "Be the first to comment!";
+                        echo "<div class=\"comment center\"><p>Be the first to comment!</p></div>";
                     }
                     ?>
 
