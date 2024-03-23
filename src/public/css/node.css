@@ -1,0 +1,28 @@
+#reply {
+
+}
+#comments {
+    border: medium solid black;
+    margin:1em 0.5em;
+
+}
+
+.comment {
+    background-color:#d7e6fa;
+    padding:1em;
+    border-bottom: 2px solid grey;
+}
+.comment p {
+    border-bottom: 2px solid grey;
+    word-break: break-all;
+}
+
+.comment .interactionBar {
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.comment div {
+    padding: 0em;
+}

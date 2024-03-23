@@ -1,4 +1,4 @@
-<?php 
+<?php
 function renderPost($post) {
     $username = $post['author'];
     $commentText = $post['commentCount'] ? "Leave a comment (".$post['commentCount'].")" : "Be the first to comment";
@@ -10,7 +10,7 @@ function renderPost($post) {
             <a href='".SITEROOT."nerd?username=".$username."'>".$username."</a>
     </p>
     <p>".$post['content']."
-    </p>        
+    </p>
     <div class='interactionBar'>
         <div> &uarr; </div>
         <div>".$post['likes']." </div>
