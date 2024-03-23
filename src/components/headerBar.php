@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <div>
+  <div>
+    <a href="<?php echo SITEROOT; ?>">
         <h1>
             Nerd_Node
         </h1>
+    </a>
         <div id="life">
         </div>
     </div>

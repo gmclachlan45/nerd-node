@@ -25,8 +25,9 @@ include_once "renderProfilePicture.php";
             <div class="center">
                 <div class="searchBar">
 	                <form>
-                        <input type="text" id="query" name="search" placeholder="Graph.Search()">
-                        <input type="submit" id="submit" name="search">
+                        <input type="text" id="query" name="search" placeholder="Filtor Posts" value="<?php echo $_GET['search']??""; ?>">
+                        <?php if(isset($_GET['o'])) echo '<input type="hidden" id="custId" name="o" value="'.$_GET['o'].'">';?>
+                        <input type="submit" id="submit">
                     </form>
                     <div class="spacer">
                     </div>

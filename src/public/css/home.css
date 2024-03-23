@@ -168,6 +168,9 @@ button{
     border: 1px solid black;
     cursor:pointer;
 }
+form #submit {
+    cursor:pointer;
+}
 
 footer h4 {
     font-size: 3em;
