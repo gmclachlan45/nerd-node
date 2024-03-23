@@ -1,7 +1,0 @@
-<?php
-define('DBHOST', '127.0.0.1');
-define('DBNAME', 'nerdnode');
-define('DBUSER', 'root');
-define('DBPASS', '');
-ini_set('display_errors', 0);
-?>
