@@ -3,7 +3,7 @@ $host = DBHOST;
 $database = DBNAME;
 $user = DBUSER;
 $pass = DBPASS;
-echo dirname(__FILE__);
+
 
 $connection = mysqli_connect($host, $user,$pass, $database, "3306");
 
@@ -14,7 +14,7 @@ include "getQueries.php";
 $sql = "SELECT post.title, siteUser.username, post.sku, post.content,
                post.likes, COUNT(comment.id) AS comments, (ABS(post.likes)) AS heat
         FROM (post JOIN siteUser ON post.poster = siteUser.id)
-             LEFT JOIN comment ON comment.originalPost = post.id 
+             LEFT JOIN comment ON comment.originalPost = post.id
         WHERE siteUser.username = '$username'
         GROUP BY post.id $orderBy";
 echo $orderBy;

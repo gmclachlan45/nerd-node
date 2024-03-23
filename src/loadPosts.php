@@ -3,7 +3,6 @@ $host = DBHOST;
 $database = DBNAME;
 $user = DBUSER;
 $pass = DBPASS;
-echo dirname(__FILE__);
 
 $connection = mysqli_connect($host, $user,$pass, $database, "3306");
 
@@ -16,7 +15,6 @@ $sql = "SELECT post.title, siteUser.username, post.sku, post.content,
         FROM (post JOIN siteUser ON post.poster = siteUser.id)
              LEFT JOIN comment ON comment.originalPost = post.id
         GROUP BY post.id $orderBy";
-echo $orderBy;
 
 $posts = array();
 if($result = mysqli_query($connection, $sql)) {
