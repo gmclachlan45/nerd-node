@@ -166,7 +166,7 @@ button{
     padding: 0.9em 0.9em 0.9em 0.9em;
     border-radius: 10px;
     border: 1px solid black;
-
+    cursor:pointer;
 }
 
 footer h4 {
