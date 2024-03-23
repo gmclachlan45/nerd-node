@@ -2,7 +2,7 @@
 $orderBy = '';
 
 
-switch ($_GET['o']) {
+switch ($_GET['o'] ?? '') {
     case 'hot':
         $orderBy = ' ORDER BY heat DESC';
         break;
