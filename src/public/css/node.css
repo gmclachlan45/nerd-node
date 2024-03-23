@@ -9,20 +9,31 @@
 
 .comment {
     background-color:#d7e6fa;
-    padding:1em;
+    padding:1em 0.6em;
     border-bottom: 2px solid grey;
+
 }
 .comment p {
     border-bottom: 2px solid grey;
     word-break: break-all;
+    overflow: hidden;
 }
 
 .comment .interactionBar {
     display:flex;
     align-items: center;
     justify-content: space-evenly;
-
+    overflow: hidden;
 }
 .comment div {
     padding: 0em;
+    overflow: hidden;
+}
+
+
+#comments .pfp {
+    border: 2px solid blue;
+    margin: 0.2em;
+    border-radius: 50%;
+    float: left;
 }

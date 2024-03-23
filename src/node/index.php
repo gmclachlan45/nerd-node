@@ -4,6 +4,7 @@ session_start();
 $sku = $_GET['title'];
 include_once "loadPost.php";
 include_once "renderComments.php";
+include_once "../renderProfilePicture.php";
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +31,7 @@ include_once "renderComments.php";
         <main>
             <div class="center">
                 <div class="post">
+                    <?php renderProfilePicture($post['author'], $post['pfp']); ?>
                     <h3>
                         <?php echo $post["title"];?>
                     </h3>
@@ -41,9 +43,8 @@ include_once "renderComments.php";
                     </p>
                     <div class="interactionBar">
                         <div> &uarr; </div>
-                        <div> <?php echo number_format($popularity); ?> </div>
+                        <div> <?php echo $post["likes"]; ?> </div>
                         <div> &darr; </div>
-
                         <div class="spacer"> </div>
                         <div> Report this user </div>
                     </div>

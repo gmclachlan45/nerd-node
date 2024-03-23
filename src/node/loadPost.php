@@ -29,6 +29,7 @@ while($row = mysqli_fetch_assoc($result)) {
     $post = ['id' => $row['id'],
              'title' => $row['title'],
              'author' => $row['username'],
+             'pfp' => $row['profilePicture'],
              'sku' => $row['sku'],
              'content' => $row['content'],
              'likes' => number_format($row['likes']),
@@ -37,7 +38,7 @@ while($row = mysqli_fetch_assoc($result)) {
 
 }
 
-$getComments = $connection->prepare("SELECT p1.id AS id, p2.id AS parentId, siteUser.username as username, p1.content AS content, p2.content AS parentContent, p1.likes
+$getComments = $connection->prepare("SELECT p1.id AS id, p2.id AS parentId, siteUser.username as username, siteUser.profilePicture AS profilePicture, p1.content AS content, p2.content AS parentContent, p1.likes
 FROM comment AS p1 LEFT JOIN comment AS p2 ON p1.parentComment = p2.id JOIN siteUser ON p1.poster = siteUser.id WHERE p1.originalPost = ?");
 
 $getComments->bind_param("s", $post['id']);
@@ -49,6 +50,7 @@ $comments = array();
 while($row = mysqli_fetch_assoc($result)) {
     array_push($comments, [
         'author' => $row['username'],
+        'pfp' => $row['profilePicture'],
         'id' => $row['id'],
         'parentId' => $row['parentId'],
         'content' => $row['content'],

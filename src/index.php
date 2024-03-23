@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php
+session_start();
+include_once "../config.php";
+include_once "loadPosts.php";
+include_once "renderPosts.php";
+include_once "renderProfilePicture.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,9 +15,6 @@
 	    <link rel="stylesheet" href="public/css/reset.css">
 	    <link rel="stylesheet" href="public/css/home.css">
         <link rel="stylesheet" href="public/font/hack.css">
-        <?php include_once "../config.php"; ?>
-        <?php include_once "loadPosts.php" ?>
-        <?php include_once "renderPosts.php" ?>
     </head>
     <body>
 	    <header>
