@@ -32,11 +32,13 @@ CREATE TABLE post (
 
 CREATE TABLE comment (
 	id int AUTO_INCREMENT,
+    poster int,
 	originalPost int,
     parentComment int,
     likes int,
     content TEXT(65535),
     PRIMARY KEY (id),
+    FOREIGN KEY (poster) REFERENCES siteUser(id),
     FOREIGN KEY (originalPost) REFERENCES post(id),
     FOREIGN KEY (parentComment) REFERENCES comment(id)
 );
@@ -91,7 +93,7 @@ VALUES
 
 INSERT INTO comment
 VALUES
-    (1, 1, NULL, 2555, 'LANDMASTER!'),
-    (2, 1, 1, -5257, 'Personally, I prefer the air'),
-    (3, 1, NULL, 0, 'Cringe + L + Ratio'),
-    (4, 3, NULL, 222222, 'Try again\n and we will find a way');
+    (1,  2,1, NULL, 2555, 'LANDMASTER!'),
+    (2,  3, 1, 1, -5257, 'Personally, I prefer the air'),
+    (3,  2, 1, NULL, 0, 'Cringe + L + Ratio'),
+    (4, 1, 3, NULL, 222222, 'Try again\n and we will find a way');
