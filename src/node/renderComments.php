@@ -1,6 +1,6 @@
 <?php
 include_once "renderProfilePicture.php";
-function renderComment($comment) {
+function renderComment($comment, $op) {
     $username = $comment['author'];
 
 
@@ -26,6 +26,10 @@ function renderComment($comment) {
     <a href='".SITEROOT."node/makeComment?replyto=".$comment['id']."'> Reply </a>
     </div>
     <div class='spacer'> </div>
+    <div>
+    <a href='".SITEROOT."node?title=".$op."&reply-to=".$comment['id']."' > Reply </a>
+    </div>
+&ensp;
     <div>
     <a href='".SITEROOT."report'> Report Comment</a>
     </div>

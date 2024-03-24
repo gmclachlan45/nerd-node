@@ -37,3 +37,8 @@
     border-radius: 50%;
     float: left;
 }
+
+#reply {
+    border-bottom: medium solid black;
+
+}

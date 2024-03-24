@@ -51,18 +51,20 @@ include_once "../renderProfilePicture.php";
                 </div>
 
                 <div id="comments">
-
                     <div id="reply">
-                        <form>
-                            leave a reply :)
 
-                        </form>
-
+                        <?php
+                        if(isset($_SESSION["sessionId"])) {
+                            include "../components/commentForm.php";
+                        } else {
+                            echo "<p> <a href='".SITEROOT."login'>Log in</a> to leave a reply to this post!</p>";
+                        }
+                        ?>
                     </div>
                     <?php
                     if($comments) {
                         foreach($comments as $comment) {
-                            renderComment($comment);
+                            renderComment($comment, $sku);
                         }
                     } else {
                         echo "<div class=\"comment center\"><p>Be the first to comment!</p></div>";
