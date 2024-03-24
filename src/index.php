@@ -25,7 +25,7 @@ include_once "renderProfilePicture.php";
             <div class="center">
                 <div class="searchBar">
 	                <form>
-                        <input type="text" id="query" name="search" placeholder="Filtor Posts" value="<?php echo $_GET['search']??""; ?>">
+                        <input type="text" id="query" name="search" placeholder="Filter Posts" value="<?php echo $_GET['search']??""; ?>">
                         <?php if(isset($_GET['o'])) echo '<input type="hidden" id="custId" name="o" value="'.$_GET['o'].'">';?>
                         <input type="submit" id="submit">
                     </form>
@@ -49,7 +49,7 @@ include_once "renderProfilePicture.php";
                 <?php
                 if($posts) {
                     foreach($posts as $post) {
-                        renderPost($post);
+                        renderPost($post, isset($_SESSION["isAdmin"]));
                     }
                 } else {
                     echo "There are no posts available...";

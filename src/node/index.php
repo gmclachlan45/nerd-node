@@ -36,7 +36,9 @@ include_once "../renderProfilePicture.php";
                         <?php echo $post["title"];?>
                     </h3>
                     <p>
-                        <?php echo $post["author"]; ?>
+                        <?php
+                        echo "<a href='".SITEROOT."nerd?username=".$post["author"]."'>".$post["author"]."</a>";
+                        ?>
                     </p>
                     <p>
                         <?php echo $post["content"]; ?>
@@ -64,7 +66,7 @@ include_once "../renderProfilePicture.php";
                     <?php
                     if($comments) {
                         foreach($comments as $comment) {
-                            renderComment($comment, $sku);
+                            renderComment($comment, $sku, isset($_SESSION["isAdmin"]));
                         }
                     } else {
                         echo "<div class=\"comment center\"><p>Be the first to comment!</p></div>";

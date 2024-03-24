@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["email"]) && isset($_PO
         if($sql->execute()) {
             echo "An account for the user $email has been created";
             // Redirect to login page
-            header('Location: index.php?showLoginForm=true');
+            header('Location: ./?showLoginForm=true');
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($connection);
         }

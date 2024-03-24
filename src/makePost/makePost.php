@@ -1,8 +1,9 @@
 <?php
-session_start(); // start a session
 include_once "../../config.php";
 
-if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["postTitle"]) && isset($_POST["postContent"])) {
+if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["postTitle"]) && isset($_POST["postContent"]) && isset($_POST['poster'])) {
+    echo "here";
+
     $connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 
     $error = mysqli_connect_error();
@@ -12,13 +13,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["postTitle"]) && isset(
     } else {
         $postTitle = $_POST["postTitle"];
         $postContent = $_POST["postContent"];
-        $userId = $_SESSION["sessionUserId"]; // get the user id from the session
-        $username = $_SESSION["sessionUsername"]; // get the username from the session
+        $userId = $_POST["poster"];
+        $sku = substr($postContent, 0, min(15, strlen($postContent)));
+        $sku = str_replace(" ", "-", $sku);
+        $sku = str_replace(",", "-", $sku);
+        $sku = str_replace(".", "-", $sku);
 
-        $sql = $connection->prepare("INSERT INTO post (title, content, poster) VALUES (?, ?, ?)");
-        $sql->bind_param("ssi", $postTitle, $postContent, $userId);
+        $sql = $connection->prepare("INSERT INTO post (title, content, poster, likes, sku) VALUES (?, ?, ?, 0, ?)");
+        $sql->bind_param("ssis", $postTitle, $postContent, $userId, $sku);
         if($sql->execute()) {
-            header('Location: ' . $_SERVER['DOCUMENT_ROOT'] . '/nerd/index.php?username=' . $username); // redirect to the user's page
+            header('Location: ../node/?title=' . $sku); // redirect to the newly made post
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($connection);
         }

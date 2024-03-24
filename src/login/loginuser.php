@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["email"]) && isset($_PO
         while($row = mysqli_fetch_assoc($result)) {
             $username = $row['username'];
             $userId = $row['id'];
+            $isAdmin = $row['isAdmin'];
         }
         session_start();
 
@@ -35,6 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["email"]) && isset($_PO
         $_SESSION["sessionUserId"] = $userId;
         $_SESSION["sessionUsername"] = $username;
         $_SESSION["sessionId"] = $sessionId;
+        if($isAdmin)
+            $_SESSION["isAdmin"] = true;
 
         $sql = $connection->prepare("INSERT INTO userSession VALUES (?, ?)");
         $sql->bind_param("ss" , $sessionId, $userId);

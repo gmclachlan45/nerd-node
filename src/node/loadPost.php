@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$getPost = $connection->prepare("SELECT * FROM (post JOIN siteUser ON post.poster = siteUser.id) WHERE post.sku = ?");
+$getPost = $connection->prepare("SELECT post.id, post.title, siteUser.username, siteUser.profilePicture, post.sku, post.content, post.likes FROM (post JOIN siteUser ON post.poster = siteUser.id) WHERE post.sku = ?");
 
 $getPost->bind_param("s", $sku);
 $getPost->execute();
@@ -32,14 +32,13 @@ while($row = mysqli_fetch_assoc($result)) {
              'pfp' => $row['profilePicture'],
              'sku' => $row['sku'],
              'content' => $row['content'],
-             'likes' => number_format($row['likes']),
-             'commentCount' => $row['comments']
+             'likes' => number_format($row['likes'])
     ];
-
 }
 
 $getComments = $connection->prepare("SELECT p1.id AS id, p2.id AS parentId, siteUser.username as username, siteUser.profilePicture AS profilePicture, p1.content AS content, p2.content AS parentContent, p1.likes
-FROM comment AS p1 LEFT JOIN comment AS p2 ON p1.parentComment = p2.id JOIN siteUser ON p1.poster = siteUser.id WHERE p1.originalPost = ?");
+FROM (comment AS p1 LEFT JOIN comment AS p2 ON p1.parentComment = p2.id)
+     JOIN siteUser ON p1.poster = siteUser.id WHERE p1.originalPost = ?");
 
 $getComments->bind_param("s", $post['id']);
 $getComments->execute();

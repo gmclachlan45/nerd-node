@@ -201,3 +201,14 @@ footer h4{
     border-radius: 50%;
     float: right;
 }
+
+form #delete {
+    cursor:pointer;
+    background-color: red;
+    color: white;
+    padding: 0.6em;
+    margin: 0.1em;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+}

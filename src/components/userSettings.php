@@ -18,6 +18,8 @@
         <option value="public">Public</option>
         <option value="private">Private</option>
       </select>
+      <label for="edit-pfp">Edit Profile Picture:</label>
+      <input type="file" id="edit-pfp" name="edit-pfp" accept="image/png, image/jpeg" />
       <br>
       <input type="submit" value="Submit User Changes">
     </form>

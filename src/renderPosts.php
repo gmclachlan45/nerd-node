@@ -1,8 +1,9 @@
 <?php
 include_once "renderProfilePicture.php";
-function renderPost($post) {
+function renderPost($post, $isAdmin) {
     $username = $post['author'];
     $commentText = $post['commentCount'] ? "Leave a comment (".$post['commentCount'].")" : "Be the first to comment";
+
     echo "<div class=\"post\">";
     renderProfilePicture($username, $post['pfp']);
     echo "<h3>
@@ -22,10 +23,20 @@ function renderPost($post) {
             <a href='".SITEROOT."node?title=".$post['sku']."'>".$commentText."</a>
         </div>
         <div class='spacer'> </div>
-        <div>
-            <a href='".SITEROOT."report'> Report user</a>
-        </div>
+        <div>";
+
+    if(!$isAdmin)
+        echo"<a href='".SITEROOT."report'> Report user</a>";
+    else
+        echo "<form name='commentForm' action='deleteItem.php' method='post'>
+        <input type='hidden' id='id' name='id' value='".$post["id"]."'>
+        <input type='hidden' id='reporter' name='reporter' value='".$_SESSION['sessionUserId']."'>
+        <input type='hidden' id='table' name='table' value='post'>
+        <input type='submit' id='delete' value='DELETE POST'>
+    </form>";
+
+    echo"</div>
     </div>
-</div>";
+    </div>";
 }
 ?>

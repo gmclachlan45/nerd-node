@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 include "getQueries.php";
-$sql = "SELECT post.title, siteUser.username, siteUser.profilePicture, post.sku, post.content,
+$sql = "SELECT post.id, post.title, siteUser.username, siteUser.profilePicture, post.sku, post.content,
                post.likes, COUNT(comment.id) AS comments, (ABS(post.likes)) AS heat
         FROM (post JOIN siteUser ON post.poster = siteUser.id)
              LEFT JOIN comment ON comment.originalPost = post.id
@@ -19,7 +19,9 @@ $sql = "SELECT post.title, siteUser.username, siteUser.profilePicture, post.sku,
 $posts = array();
 if($result = mysqli_query($connection, $sql)) {
     while($row = mysqli_fetch_assoc($result)) {
-        array_push($posts, ['title' => $row['title'],
+        array_push($posts, [
+                            'id' => $row['id'],
+                            'title' => $row['title'],
                             'author' => $row['username'],
                             'pfp' => $row['profilePicture'],
                             'sku' => $row['sku'],

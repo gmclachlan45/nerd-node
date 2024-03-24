@@ -1,6 +1,6 @@
 <?php
 include_once "renderProfilePicture.php";
-function renderComment($comment, $op) {
+function renderComment($comment, $op, $isAdmin) {
     $username = $comment['author'];
 
 
@@ -22,17 +22,25 @@ function renderComment($comment, $op) {
     <div> &uarr; </div>
     <div>".$comment['likes']." </div>
     <div> &darr; </div>
-    <div>
-    <a href='".SITEROOT."node/makeComment?replyto=".$comment['id']."'> Reply </a>
-    </div>
     <div class='spacer'> </div>
     <div>
     <a href='".SITEROOT."node?title=".$op."&reply-to=".$comment['id']."' > Reply </a>
     </div>
 &ensp;
-    <div>
-    <a href='".SITEROOT."report'> Report Comment</a>
-    </div>
+    <div>";
+
+
+    if(!$isAdmin)
+        echo"<a href='".SITEROOT."report'> Report user</a>";
+    else
+        echo "<form name='commentForm' action='../deleteItem.php' method='post'>
+        <input type='hidden' id='id' name='id' value='".$comment["id"]."'>
+        <input type='hidden' id='reporter' name='reporter' value='".$_SESSION['sessionUserId']."'>
+        <input type='hidden' id='table' name='table' value='comment'>
+        <input type='submit' id='delete' value='DELETE COMMENT'>
+    </form>";
+
+    echo "</div>
     </div>
     </div>";
 }

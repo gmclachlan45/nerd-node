@@ -24,7 +24,7 @@ $username = $_GET['username'];
         </header>
 	    <main>
 
-		    <form id="posts">
+		    <div id="posts">
 			    <div class="form-header">
 			        <div class="search-bar">
 				        <span class="search-text">Graph.Search()</span>
@@ -46,13 +46,14 @@ $username = $_GET['username'];
                 <?php
                 if($posts) {
                     foreach($posts as $post) {
-                        renderPost($post);
+                        renderPost($post, isset($_SESSION["isAdmin"]));
                     }
                 } else {
                     echo "There are no posts available...";
                 }
                 ?>
-	        </form>
+
+	        </div>
             <div id="right-sidebar">
                 <?php
                 if(isset($_SESSION["sessionId"])) {
@@ -70,7 +71,7 @@ $username = $_GET['username'];
                     include "../components/sidebar.php";
                 }
                 ?>
-
+            </div>
             </div>
         </main>
 	    <footer>

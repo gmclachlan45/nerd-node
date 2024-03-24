@@ -10,6 +10,7 @@ switch ($_GET['o'] ?? '') {
         $orderBy = ' ORDER BY comments DESC';
         break;
     default:
+        $orderBy = ' ORDER BY id DESC';
         break;
 }
 $searchPosts='';
