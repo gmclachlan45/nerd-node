@@ -27,7 +27,7 @@ CREATE TABLE post (
     likes int,
     sku varchar(255),
     PRIMARY KEY (id),
-    FOREIGN KEY (poster) REFERENCES siteUser(id)
+    FOREIGN KEY (poster) REFERENCES siteUser(id) ON DELETE CASCADE
 );
 
 CREATE TABLE comment (
@@ -39,8 +39,8 @@ CREATE TABLE comment (
     content TEXT(65535),
     PRIMARY KEY (id),
     FOREIGN KEY (poster) REFERENCES siteUser(id),
-    FOREIGN KEY (originalPost) REFERENCES post(id),
-    FOREIGN KEY (parentComment) REFERENCES comment(id)
+    FOREIGN KEY (originalPost) REFERENCES post(id) ON DELETE CASCADE,
+    FOREIGN KEY (parentComment) REFERENCES comment(id) ON DELETE CASCADE
 );
 
 CREATE TABLE postReport (
@@ -48,8 +48,8 @@ CREATE TABLE postReport (
 	reporter int,
     reportedPost int,
     PRIMARY KEY (id),
-    FOREIGN KEY (reporter) REFERENCES siteUser(id),
-    FOREIGN KEY (reportedPost) REFERENCES post(id)
+    FOREIGN KEY (reporter) REFERENCES siteUser(id) ON DELETE CASCADE,
+    FOREIGN KEY (reportedPost) REFERENCES post(id) ON DELETE CASCADE
 );
 
 CREATE TABLE commentReport (
@@ -57,15 +57,15 @@ CREATE TABLE commentReport (
 	reporter int,
     reportedComment int,
     PRIMARY KEY (id),
-    FOREIGN KEY (reporter) REFERENCES siteUser(id),
-    FOREIGN KEY (reportedComment) REFERENCES comment(id)
+    FOREIGN KEY (reporter) REFERENCES siteUser(id) ON DELETE CASCADE,
+    FOREIGN KEY (reportedComment) REFERENCES comment(id) ON DELETE CASCADE
 );
 
 CREATE TABLE userSession (
     id varchar(63),
     userId int,
     PRIMARY KEY (id),
-    FOREIGN KEY (userId) REFERENCES siteUser(id)
+    FOREIGN KEY (userId) REFERENCES siteUser(id) ON DELETE CASCADE
 );
 
 CREATE TABLE postTag (
@@ -73,7 +73,7 @@ CREATE TABLE postTag (
     tagName varchar(63),
     postId int,
     PRIMARY KEY (id),
-    FOREIGN KEY (postId) REFERENCES post(id)
+    FOREIGN KEY (postId) REFERENCES post(id) ON DELETE CASCADE
 );
 
 INSERT INTO siteUser
@@ -86,10 +86,10 @@ VALUES
 
 INSERT INTO post
 VALUES
-    (1, 'Title 1', 1, 'This is the main body of the post and you should know', 5222, 'post-one'),
-    (2, 'Title 2', 2, 'This is the main SNOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOX and you should know', 20525, 'post-two'),
-    (3, 'Title 3', 3, 'This is the main body of the post know', -253, 'post-thr'),
-    (4, 'Title 3 again', 3, 'This is the m the post and you should know', 24, 'post-for');
+    (1, 'Code Improvement Books', 2, 'Just finished reading "Clean Code" by Robert C. Martin. What other books do you recommend for improving coding skills?', 20525, 'code-improvement'),
+    (2, 'After Grad Suggestions', 3, 'Debating between pursuing a master''s degree or entering the workforce after undergrad. What factors should I consider?', -253, 'grad-work-force'),
+    (3, 'Algorithm Help!!!', 3, 'Struggling with understanding algorithms. Any recommended resources or study techniques?', 24, 'algorithm-help'),
+    (4, 'Yes I know, I just asked for Algorithm help, but I also have a huge project Idea.', 3, 'Just completed a deep dive into machine learning algorithms, and I''m blown away by the potential applications in various industries! From predictive analytics to natural language processing, the possibilities seem endless. However, I''m struggling to decide which specific area to focus on for my next project. Should I delve deeper into neural networks and explore deep learning techniques, or should I explore reinforcement learning for more interactive applications? I''d love to hear from fellow enthusiasts about their experiences and recommendations. Additionally, if anyone has any project ideas or resources they could share, I''d greatly appreciate it. Let''s discuss and collaborate on pushing the boundaries of machine learning together!', 24, 'ml-algorithm');
 
 INSERT INTO comment
 VALUES
