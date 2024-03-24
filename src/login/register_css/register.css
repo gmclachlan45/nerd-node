@@ -35,6 +35,13 @@ body{
   display: none;
 }
 
+
+.toggle-password {
+  position: relative;
+  top: -60px;
+  left: 300px;
+}
+
 .container .form {
   padding: 2rem;
   background: rgba(255, 255, 255, 0.8);
