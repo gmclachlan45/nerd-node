@@ -212,3 +212,10 @@ form #delete {
     border: 1px solid black;
     font-weight: bold;
 }
+
+.interactionBar .arrow {
+    border-radius: 10px;
+    margin: 0px 0.1em;
+    border: 1px solid black;
+    cursor:pointer;
+}

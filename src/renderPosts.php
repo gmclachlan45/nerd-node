@@ -16,9 +16,9 @@ function renderPost($post, $isAdmin) {
     <p>".$post['content']."
     </p>
     <div class='interactionBar'>
-        <div> &uarr; </div>
-        <div>".$post['likes']." </div>
-        <div> &darr; </div>
+        <div class='arrow' onclick='upvote(".$post['id'].", 5)'> &uarr; </div>
+        <div id='post-".$post['id']."'>".$post['likes']." </div>
+        <div class='arrow' onclick='downvote(".$post['id'].", 2)'> &darr; </div>
         <div>
             <a href='".SITEROOT."node?title=".$post['sku']."'>".$commentText."</a>
         </div>

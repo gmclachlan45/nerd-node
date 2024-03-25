@@ -63,3 +63,4 @@ include_once "renderProfilePicture.php";
         <?php include "components/footer.php"; ?>
     </body>
 </html>
+<script src="index.js"></script>
