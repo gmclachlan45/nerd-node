@@ -3,7 +3,7 @@ session_start();
 include_once "../../config.php";
 
 if(!isset($_SESSION["sessionId"])) {
-    header('Location: '.SITEROOT);
+    header('Location: '.SITEROOT.'login');
 }
 ?>
 <!DOCTYPE html>

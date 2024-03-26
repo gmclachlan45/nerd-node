@@ -16,7 +16,7 @@
         <div class="spacer">
         </div>
         <div class="buttonBox">
-        <button id="newPost" onclick='location.href = "/makePost";'>Make Post</button>
+        <button id="newPost" onclick='location.href = "<?php echo SITEROOT; ?>makePost";'>Make Post</button>
             <?php
             if(isset($_SESSION["sessionId"]) ) {
                 echo "<button id='home' onclick='location.href = \"".SITEROOT."nerd?username=".$_SESSION["sessionUsername"]."\";' >".

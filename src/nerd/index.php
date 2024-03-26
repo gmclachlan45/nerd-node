@@ -82,3 +82,4 @@ $username = $_GET['username'];
 	    </footer>
     </body>
 </html>
+<script src="index.js"></script>
