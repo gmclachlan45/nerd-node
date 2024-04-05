@@ -41,6 +41,8 @@ header div {
 
 main {
     display: flex;
+    height:auto;
+    min-height:80vh;
     margin: 0em 4em;
 }
 

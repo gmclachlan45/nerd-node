@@ -16,12 +16,20 @@
         <div class="spacer">
         </div>
         <div class="buttonBox">
-        <button id="newPost" onclick='location.href = "<?php echo SITEROOT; ?>makePost";'>Make Post</button>
+            <?php
+
+            ?>
+
+            <button id="newPost" onclick='location.href = "<?php echo SITEROOT; ?>makePost";'>Make Post</button>
             <?php
             if(isset($_SESSION["sessionId"]) ) {
                 echo "<button id='home' onclick='location.href = \"".SITEROOT."nerd?username=".$_SESSION["sessionUsername"]."\";' >".
                      $_SESSION["sessionUsername"]
                     ."</button>";
+
+                if(isset($_SESSION["isAdmin"])) {
+                    echo "<button id='home' onclick='location.href = \"".SITEROOT."\admin\"'> View Reports </button>";
+                }
                 echo "<button id='logout' onclick='location.href = \"".SITEROOT."logout.php\";' >
                       Log out
                   </button>";
