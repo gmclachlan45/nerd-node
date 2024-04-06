@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         // Handle the profile picture upload
         if (!empty($_FILES["edit-pfp"]["name"])) {
-            $target_dir = SITEROOT . "src/uploads/";
+            $target_dir = SITEROOT . "src/public/images/profiles/";
             $target_file = $target_dir . $_FILES["edit-pfp"]["name"];
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             $check = getimagesize($_FILES["edit-pfp"]["tmp_name"]);

@@ -1,5 +1,3 @@
-<?php 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- User Settings Form -->
@@ -19,7 +17,7 @@
         <input type="file" id="edit-pfp" name="edit-pfp" accept="image/png, image/jpeg" />
         <br>
         <!-- Display the current profile picture -->
-        <img src="<?php echo SITEROOT . 'src/uploads/' . $profilePicture; ?>" alt="Current Profile Picture">
+        <img src="<?php echo SITEROOT . 'src/public/images/profiles/' . $profilePicture; ?>" alt="Current Profile Picture">
         <br>
         <input type="submit" value="Submit User Changes">
     </form>
