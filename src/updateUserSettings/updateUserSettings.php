@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if($sql->execute()) {
             // Update session variables
             $_SESSION["sessionUsername"] = $username;
-            header('Location: ' . SITEROOT . 'index.php'); // Redirect to home page after successful update
+            header('Location: ' . SITEROOT . 'nerd/?username='.$username); // Redirect to home page after successful update
             exit;
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($connection);

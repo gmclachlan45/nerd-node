@@ -1,10 +1,10 @@
 async function upvote(postId, userSession) {
     const endpoint = '../upvote.php';
-    const outputElement = document.getElementById('post-' + postId);
+    const outputElement = document.getElementById('comment-' + postId);
     var formData = new FormData();
     formData.append('id', postId);
     formData.append('userSession', userSession);
-    formData.append('table', 'post');
+    formData.append('table', 'comment');
 
     fetch(endpoint, { method: 'POST', body: formData })
         .then(function (response) {
@@ -17,15 +17,13 @@ async function upvote(postId, userSession) {
         });
 }
 
-
-
 function downvote(postId, userSession) {
     const endpoint = '../downvote.php';
-    const outputElement = document.getElementById('post-' + postId);
+    const outputElement = document.getElementById('comment-' + postId);
     var formData = new FormData();
     formData.append('id', postId);
     formData.append('userSession', userSession);
-    formData.append('table', 'post');
+    formData.append('table', 'comment');
 
     fetch(endpoint, { method: 'POST', body: formData })
         .then(function (response) {
