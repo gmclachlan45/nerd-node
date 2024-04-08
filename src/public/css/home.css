@@ -232,3 +232,41 @@ form #delete {
     text-decoration: none;
     cursor: unset;
 }
+.adminReport {
+    width: auto;
+
+    margin: 0.5em;
+    border: 1px solid black;
+}
+
+.del {
+    cursor:pointer;
+    background-color: red;
+    color: white;
+    padding: 0.6em;
+    margin: 0.1em;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+.reportBar{
+        display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.6em;
+}
+.dis {
+    cursor:pointer;
+    background-color: green;
+    color: white;
+    padding: 0.6em;
+    margin: 0.1em;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.adminReport p, .adminReport h2 {
+     padding: 0.6em;
+}

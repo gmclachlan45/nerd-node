@@ -22,8 +22,9 @@ function renderPost($post, $isAdmin) {
         <div>
             <a href='".SITEROOT."node?title=".$post['sku']."'>".$commentText."</a>
         </div>
-        <div class='spacer'> </div>
-        <div>";
+        <div class='spacer'>
+    </div>
+    <div>";
 
     if(!$isAdmin)
         echo "<div class='report' id='rep-".$post['id']."' onclick='report(".$post['id'].", 2)'> Report comment</div>";
