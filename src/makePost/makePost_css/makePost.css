@@ -43,3 +43,13 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+
+#postTag {
+    display: block;
+    margin: 10px auto;
+}
+
+#submit {
+    display: block;
+    margin-top: 70px;
+}

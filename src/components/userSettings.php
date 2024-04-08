@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <style>
+        main, #right-sidebar {
+        border: none !important;
+    }
+    #user-settings-form {
+            width: 115%;
+            margin-left: 15%;
+    }
+    </style>
+</head>
+<body>
 <!-- User Settings Form -->
 <div id="user-settings-form">
     <h2>User Settings</h2>
@@ -22,4 +34,5 @@
         <input type="submit" value="Submit User Changes">
     </form>
 </div>
+</body>
 </html>

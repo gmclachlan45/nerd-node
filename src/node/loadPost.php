@@ -36,9 +36,12 @@ while($row = mysqli_fetch_assoc($result)) {
     ];
 }
 
-$getComments = $connection->prepare("SELECT p1.id AS id, p2.id AS parentId, siteUser.username as username, siteUser.profilePicture AS profilePicture, p1.content AS content, p2.content AS parentContent, p1.likes
-FROM (comment AS p1 LEFT JOIN comment AS p2 ON p1.parentComment = p2.id)
-     JOIN siteUser ON p1.poster = siteUser.id WHERE p1.originalPost = ?");
+$getComments = $connection->prepare("SELECT comment.id AS id, comment.parentComment AS parentId, siteUser.username as username, siteUser.profilePicture AS profilePicture, comment.content AS content, parentComment.content AS parentContent, comment.likes
+FROM comment
+LEFT JOIN post ON comment.originalPost = post.id
+LEFT JOIN siteUser ON post.poster = siteUser.id
+LEFT JOIN comment AS parentComment ON comment.parentComment = parentComment.id
+WHERE comment.originalPost = ?");
 
 $getComments->bind_param("s", $post['id']);
 $getComments->execute();
