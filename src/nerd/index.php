@@ -57,7 +57,7 @@ $username = $_GET['username'];
             <div id="right-sidebar">
                 <?php
                 if(isset($_SESSION["sessionId"])) {
-                    if($_SESSION["sessionUsername"] == "admin") {
+                    if(isset($_SESSION["isAdmin"])) {
                         include "../components/adminSettings.php";
                         include "../components/userSettings.php";
                     } else if ($_SESSION["sessionUsername"] == $username ) {

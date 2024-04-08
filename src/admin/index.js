@@ -1,57 +1,61 @@
-async function upvote(postId, userSession) {
-    const endpoint = 'upvote.php';
+async function deletePost(postId, userSession) {
+    const endpoint = 'deletePost.php';
     const outputElement = document.getElementById('post-' + postId);
     var formData = new FormData();
     formData.append('id', postId);
     formData.append('userSession', userSession);
-    formData.append('table', 'post');
 
     fetch(endpoint, { method: 'POST', body: formData })
         .then(function (response) {
             return response.text();
         })
         .then(function (body) {
-            var num =outputElement.textContent;
-            num = Number.parseInt(num.replace(/,/g,"")) + 1;
-            outputElement.textContent =  num.toLocaleString("en-US");
+            outputElement.outerHTML="";
+
         });
 }
 
-
-
-function downvote(postId, userSession) {
-    const endpoint = 'downvote.php';
+async function dismissPost(postId, userSession) {
+    const endpoint = 'dismissPost.php';
     const outputElement = document.getElementById('post-' + postId);
     var formData = new FormData();
     formData.append('id', postId);
     formData.append('userSession', userSession);
-    formData.append('table', 'post');
-
     fetch(endpoint, { method: 'POST', body: formData })
         .then(function (response) {
             return response.text();
         })
         .then(function (body) {
-            var num =outputElement.textContent;
-            num = Number.parseInt(num.replace(/,/g,"")) - 1;
-            outputElement.textContent =  num.toLocaleString("en-US");
+            outputElement.outerHTML="";
         });
 }
 
-function report(postId, userSession) {
-    const endpoint = 'report.php';
-    const outputElement = document.getElementById('rep-' + postId);
+async function deleteComment(postId, userSession) {
+    const endpoint = 'deleteComment.php';
+    const outputElement = document.getElementById('comment-' + postId);
     var formData = new FormData();
     formData.append('id', postId);
     formData.append('userSession', userSession);
-    formData.append('table', 'post');
-
     fetch(endpoint, { method: 'POST', body: formData })
         .then(function (response) {
             return response.text();
         })
         .then(function (body) {
-            outputElement.classList.add("reported");
-            outputElement.textContent =  "Reported";
+            outputElement.outerHTML="";
+        });
+}
+
+async function dismissComment(postId, userSession) {
+    const endpoint = 'dismissComment.php';
+    const outputElement = document.getElementById('comment-' + postId);
+    var formData = new FormData();
+    formData.append('id', postId);
+    formData.append('userSession', userSession);
+    fetch(endpoint, { method: 'POST', body: formData })
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (body) {
+            outputElement.outerHTML="";
         });
 }

@@ -4,7 +4,7 @@ function renderComment($comment, $op, $isAdmin) {
     $username = $comment['author'];
 
 
-    echo "<div class=\"comment\" id=\"".$comment['id']."\">";
+    echo "<div class=\"comment\">";
     renderProfilePicture($username, $comment['pfp']);
     echo "<p>
             <a href='".SITEROOT."nerd?username=".$username."'>".$username."</a>";
@@ -19,9 +19,12 @@ function renderComment($comment, $op, $isAdmin) {
     <p>".$comment['content']."
     </p>
     <div class='interactionBar'>
-    <div> &uarr; </div>
-    <div>".$comment['likes']." </div>
-    <div> &darr; </div>
+        <div class='arrow' onclick='upvote(".$comment['id'].", 5)'> &uarr; </div>
+
+    <div id=\"comment-".$comment['id']."\">".$comment['likes']." </div>
+
+        <div class='arrow' onclick='downvote(".$comment['id'].", 2)'> &darr; </div>
+
     <div class='spacer'> </div>
     <div>
     <a href='".SITEROOT."node?title=".$op."&reply-to=".$comment['id']."' > Reply </a>
@@ -31,7 +34,7 @@ function renderComment($comment, $op, $isAdmin) {
 
 
     if(!$isAdmin)
-        echo"<a href='".SITEROOT."report'> Report user</a>";
+        echo "<div class='report' id='rep-".$comment['id']."' onclick='report(".$comment['id'].", 2)'> Report comment</div>";
     else
         echo "<form name='commentForm' action='../deleteItem.php' method='post'>
         <input type='hidden' id='id' name='id' value='".$comment["id"]."'>

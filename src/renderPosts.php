@@ -22,11 +22,12 @@ function renderPost($post, $isAdmin) {
         <div>
             <a href='".SITEROOT."node?title=".$post['sku']."'>".$commentText."</a>
         </div>
-        <div class='spacer'> </div>
-        <div>";
+        <div class='spacer'>
+    </div>
+    <div>";
 
     if(!$isAdmin)
-        echo"<a href='".SITEROOT."report'> Report user</a>";
+        echo "<div class='report' id='rep-".$post['id']."' onclick='report(".$post['id'].", 2)'> Report comment</div>";
     else
         echo "<form name='commentForm' action='deleteItem.php' method='post'>
         <input type='hidden' id='id' name='id' value='".$post["id"]."'>
