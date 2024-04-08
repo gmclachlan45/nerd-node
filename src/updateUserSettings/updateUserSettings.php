@@ -27,30 +27,31 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         // Handle the profile picture upload
         if (!empty($_FILES["edit-pfp"]["name"])) {
-            $target_dir = SITEROOT . "src/public/images/profiles/";
-            $target_file = $target_dir . $_FILES["edit-pfp"]["name"];
-            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            $target_dir = __DIR__ . "/../public/images/profiles/";
+            $imageFileType = end(explode(".",$_FILES["edit-pfp"]["name"]));
+            echo $upfile;
+            $target_file = $target_dir . $username.".".$imageFileType;
             $check = getimagesize($_FILES["edit-pfp"]["tmp_name"]);
 
             if($check !== false) {
                 if (file_exists($target_file)) {
                     echo "Sorry, file already exists.";
+                }
+                if ($_FILES["edit-pfp"]["size"] > 500000) {
+                    echo "Sorry, your file is too large.";
                 } else {
-                    if ($_FILES["edit-pfp"]["size"] > 500000) {
-                        echo "Sorry, your file is too large.";
+                    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+                        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                     } else {
-                        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-                            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                        if (move_uploaded_file($_FILES["edit-pfp"]["tmp_name"], $target_file)) {
+                            echo "The file ". htmlspecialchars( basename( $_FILES["edit-pfp"]["name"])). " has been uploaded.";
+                            $profilePicture =$username.".".$imageFileType;
                         } else {
-                            if (move_uploaded_file($_FILES["edit-pfp"]["tmp_name"], $target_file)) {
-                                echo "The file ". htmlspecialchars( basename( $_FILES["edit-pfp"]["name"])). " has been uploaded.";
-                                $profilePicture = $_FILES["edit-pfp"]["name"]; // Store only the filename
-                            } else {
-                                echo "Sorry, there was an error uploading your file.";
-                            }
+                            echo "Sorry, there was an error uploading your file.";
                         }
                     }
                 }
+
             }
         }
 
