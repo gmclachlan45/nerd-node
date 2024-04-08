@@ -91,11 +91,13 @@ VALUES
     (1, 'Code Improvement Books', 2, 'Just finished reading "Clean Code" by Robert C. Martin. What other books do you recommend for improving coding skills?', 20525, false,'code-improvement'),
     (2, 'After Grad Suggestions', 3, 'Debating between pursuing a master''s degree or entering the workforce after undergrad. What factors should I consider?', -253, false,'grad-work-force'),
     (3, 'Algorithm Help!!!', 3, 'Struggling with understanding algorithms. Any recommended resources or study techniques?', 24,false, 'algorithm-help'),
-    (4, 'Yes I know, I just asked for Algorithm help, but I also have a huge project Idea.', 3, 'Just completed a deep dive into machine learning algorithms, and I''m blown away by the potential applications in various industries! From predictive analytics to natural language processing, the possibilities seem endless. However, I''m struggling to decide which specific area to focus on for my next project. Should I delve deeper into neural networks and explore deep learning techniques, or should I explore reinforcement learning for more interactive applications? I''d love to hear from fellow enthusiasts about their experiences and recommendations. Additionally, if anyone has any project ideas or resources they could share, I''d greatly appreciate it. Let''s discuss and collaborate on pushing the boundaries of machine learning together!', 24,false, 'ml-algorithm');
+    (4, 'Yes I know, I just asked for Algorithm help, but I also have a huge project Idea.', 3, 'Just completed a deep dive into machine learning algorithms, and I''m blown away by the potential applications in various industries! From predictive analytics to natural language processing, the possibilities seem endless. However, I''m struggling to decide which specific area to focus on for my next project. Should I delve deeper into neural networks and explore deep learning techniques, or should I explore reinforcement learning for more interactive applications? I''d love to hear from fellow enthusiasts about their experiences and recommendations. Additionally, if anyone has any project ideas or resources they could share, I''d greatly appreciate it. Let''s discuss and collaborate on pushing the boundaries of machine learning together!', 24,false, 'ml-algorithm'),
+        (5, 'SPAM SPAM', 2, 'SPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAM', 20525, true,'code-improvement');
 
 INSERT INTO comment
 VALUES
     (1,  2,1, NULL, 2555,false, 'LANDMASTER!'),
     (2,  3, 1, 1, -5257,false, 'Personally, I prefer the air'),
     (3,  2, 1, NULL, 0,false, 'Cringe + L + Ratio'),
-    (4, 1, 3, NULL, 222222,false, 'Try again\n and we will find a way');
+    (4,  2, 1, NULL, -1000,true, 'SPAMSP AMSPAMSP AMSPAMSPAMS PAMSPAM SPAMSPAMSPA MSPAMSPAMSPA MSPAMSPAM SPAMSPAMSPAMSPAMS PAMSPAM'),
+    (5, 1, 3, NULL, 222222,false, 'Try again\n and we will find a way');
