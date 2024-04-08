@@ -48,7 +48,6 @@ include_once "../renderProfilePicture.php";
                         <div> <?php echo $post["likes"]; ?> </div>
                         <div> &darr; </div>
                         <div class="spacer"> </div>
-                        <div> Report this user </div>
                     </div>
                 </div>
 

@@ -221,3 +221,14 @@ form #delete {
     border: 1px solid black;
     cursor:pointer;
 }
+.report {
+    color: blue;
+    text-decoration: underline;
+    cursor:pointer;
+}
+.reported {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: unset;
+}

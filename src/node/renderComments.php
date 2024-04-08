@@ -34,7 +34,7 @@ function renderComment($comment, $op, $isAdmin) {
 
 
     if(!$isAdmin)
-        echo"<a href='".SITEROOT."report'> Report user</a>";
+        echo "<div class='report' id='rep-".$comment['id']."' onclick='report(".$comment['id'].", 2)'> Report comment</div>";
     else
         echo "<form name='commentForm' action='../deleteItem.php' method='post'>
         <input type='hidden' id='id' name='id' value='".$comment["id"]."'>
