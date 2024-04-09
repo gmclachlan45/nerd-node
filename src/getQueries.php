@@ -1,6 +1,6 @@
 <?php
 $orderBy = '';
-
+$where = '';
 
 switch ($_GET['o'] ?? '') {
     case 'hot':
@@ -13,7 +13,11 @@ switch ($_GET['o'] ?? '') {
         $orderBy = ' ORDER BY id DESC';
         break;
 }
+
+if (isset($_GET['tag'])) {
+    $tag = mysqli_real_escape_string($connection, $_GET['tag']);
+    $where = " WHERE posttag.tagName = '$tag'";
+}
+
 $searchPosts='';
-
-
 ?>

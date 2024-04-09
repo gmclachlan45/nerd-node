@@ -3,9 +3,11 @@ include_once "renderProfilePicture.php";
 function renderPost($post, $isAdmin) {
     $username = $post['author'];
     $commentText = $post['commentCount'] ? "Leave a comment (".$post['commentCount'].")" : "Be the first to comment";
+    $tags = isset($post['tags']) ? implode(', ', $post['tags']) : '';
 
     echo "<div class=\"post\">";
     renderProfilePicture($username, $post['pfp']);
+    echo "<span class='tags'>".$tags."</span>"; // Display the tags
     echo "<h3>
             <a href='".SITEROOT."node?title=".$post['sku']."'>".$post['title']."</a>
     </h3>
@@ -41,3 +43,20 @@ function renderPost($post, $isAdmin) {
     </div>";
 }
 ?>
+<style>
+.post {
+    position: relative;
+}
+
+.tags {
+    position: absolute;
+    top: 0;
+    right: 70px;
+}
+
+.pfp {
+    position: relative;
+    width: 50px;
+    bottom: 15px;
+}
+</style>
