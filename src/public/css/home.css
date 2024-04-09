@@ -270,3 +270,9 @@ form #delete {
 .adminReport p, .adminReport h2 {
      padding: 0.6em;
 }
+.banned p{
+    font-size: 1.5em;
+    margin-left: 1em;
+    margin-right:1em;
+
+}

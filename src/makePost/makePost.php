@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["postTitle"]) && isset(
         $sql->bind_param("ssis", $postTitle, $postContent, $userId, $sku);
         if($sql->execute()) {
             $postId = $connection->insert_id;
-            $sql = $connection->prepare("INSERT INTO posttag (tagName, postId) VALUES (?, ?)");
+            $sql = $connection->prepare("INSERT INTO postTag (tagName, postId) VALUES (?, ?)");
             $sql->bind_param("si", $postTag, $postId);
             if($sql->execute()) {
                 header('Location: ../node/?title=' . $sku); // redirect to the newly made post

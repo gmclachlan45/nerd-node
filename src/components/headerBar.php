@@ -10,15 +10,13 @@
         </div>
     </div>
     <div class="navbar">
-        <h1>
+        <h1 id = "pageTitle">
             <?php echo $url ?? '/HOME'; ?>
         </h1>
         <div class="spacer">
         </div>
         <div class="buttonBox">
-            <?php
 
-            ?>
 
             <button id="newPost" onclick='location.href = "<?php echo SITEROOT; ?>makePost";'>Make Post</button>
             <?php

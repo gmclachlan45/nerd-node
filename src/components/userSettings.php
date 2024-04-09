@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <style>
-        main, #right-sidebar {
-        border: none !important;
-    }
-    #user-settings-form {
-            width: 115%;
-            margin-left: 15%;
-    }
-    </style>
-</head>
-<body>
-<!-- User Settings Form -->
-<div id="user-settings-form">
-    <h2>User Settings</h2>
-    <form id="userSettingsForm" action="<?php echo SITEROOT . 'updateUserSettings/updateUserSettings.php'; ?>" method="post" enctype="multipart/form-data">
+
+  <body>
+    <!-- User Settings Form -->
+    <div id="user-settings-form">
+      <h2>User Settings</h2>
+      <form id="userSettingsForm" action="<?php echo SITEROOT . 'updateUserSettings/updateUserSettings.php'; ?>" method="post" enctype="multipart/form-data">
         <label for="edit-username">Edit Username:</label>
         <input type="text" id="edit-username" name="edit-username" placeholder="Enter new username">
         <br>
@@ -32,7 +22,7 @@
         <img src="<?php echo SITEROOT . 'src/public/images/profiles/' . $profilePicture; ?>" alt="Current Profile Picture">
         <br>
         <input type="submit" value="Submit User Changes">
-    </form>
-</div>
-</body>
+      </form>
+    </div>
+  </body>
 </html>

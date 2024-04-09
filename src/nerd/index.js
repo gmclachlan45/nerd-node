@@ -37,3 +37,20 @@ function downvote(postId, userSession) {
             outputElement.textContent =  num.toLocaleString("en-US");
         });
 }
+
+
+function disableUser(uname, userSession) {
+    const endpoint = '../disable.php';
+    const outputElement = document.getElementById("pageTitle");
+    var formData = new FormData();
+    formData.append('id', uname);
+    formData.append('userSession', userSession);
+    fetch(endpoint, { method: 'POST', body: formData })
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (body) {
+
+            outputElement.textContent =  outputElement.textContent + " - DISABLED";
+        });
+}

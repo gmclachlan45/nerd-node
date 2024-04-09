@@ -16,7 +16,7 @@ switch ($_GET['o'] ?? '') {
 
 if (isset($_GET['tag'])) {
     $tag = mysqli_real_escape_string($connection, $_GET['tag']);
-    $where = " WHERE posttag.tagName = '$tag'";
+    $where = "WHERE postTag.tagName = '$tag'";
 }
 
 $searchPosts='';

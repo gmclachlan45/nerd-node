@@ -1,6 +1,6 @@
 <?php
 session_start();
-$username = $_GET['username'];
+include_once "getUserInfo.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@ $username = $_GET['username'];
     <body>
         <header>
             <?php
-            $url = "/NERD/$username";
+            $url = "/NERD/$username" . (($isDisabled) ? " - DISABLED" : "");
             include "../components/headerBar.php";
             ?>
         </header>

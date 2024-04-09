@@ -63,6 +63,8 @@ footer h4 {
   height: 40em;
   border: medium solid black;
   padding: 2em;
+  align-items: center;
+
 }
 
 #filterPosts {
@@ -146,7 +148,7 @@ form {
 }
 
 .search-button {
-    background-color: green; 
+    background-color: green;
     border: none;
     color: white;
     padding: 0.8em 0.8em 0.8em 0.8em;
@@ -191,7 +193,63 @@ form {
     cursor: pointer;
     font-size: 1.5em;
   }
-  
+
   .upvote:hover, .downvote:hover {
     color: blue;
   }
+  main, #right-sidebar {
+      border: none !important;
+  }
+  #user-settings-form {
+      width: auto;
+      margin:auto;
+  }
+  #userSettingsForm {
+      margin:auto;
+  }
+  #admin-settings-form {
+      width: auto;
+        margin: auto;
+    }
+
+
+.delUser {
+    cursor:pointer;
+    background-color: red;
+    color: white;
+    padding: 0.6em;
+    margin: 0.1em;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.adminSettings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.6em;
+    border: 1px solid black;
+}
+.disUser {
+    cursor:pointer;
+    background-color: orangered;
+    color: white;
+    padding: 0.6em;
+    margin: 0.1em;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.enUser {
+    cursor:pointer;
+    background-color: darkgreen;
+    color: white;
+    padding: 0.6em;
+    margin: 0.1em;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+}

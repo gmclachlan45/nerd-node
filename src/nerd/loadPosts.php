@@ -16,14 +16,14 @@ $tag = isset($_GET['tag']) ? $_GET['tag'] : 'all';
 
 $where = " WHERE siteUser.username = ?";
 if ($tag !== 'all') {
-    $where .= " AND posttag.tagName = ?";
+    $where .= " AND postTag.tagName = ?";
 }
 
 $sql = "SELECT post.title, post.id, siteUser.username, siteUser.profilePicture, post.sku, post.content,
-               post.likes, COUNT(comment.id) AS comments, (ABS(post.likes)) AS heat, GROUP_CONCAT(posttag.tagName) AS tags
+               post.likes, COUNT(comment.id) AS comments, (ABS(post.likes)) AS heat, GROUP_CONCAT(postTag.tagName) AS tags
         FROM (post JOIN siteUser ON post.poster = siteUser.id)
              LEFT JOIN comment ON comment.originalPost = post.id
-             LEFT JOIN posttag ON posttag.postId = post.id
+             LEFT JOIN postTag ON postTag.postId = post.id
         $where
         GROUP BY post.id $orderBy";
 
@@ -48,7 +48,7 @@ if($stmt->execute()) {
             'content' => $row['content'],
             'likes' => number_format($row['likes']),
             'commentCount' => $row['comments'],
-            'tags' => explode(',', $row['tags']) 
+            'tags' => explode(',', $row['tags'])
         ]);
     }
 };

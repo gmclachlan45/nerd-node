@@ -22,7 +22,8 @@ CREATE TABLE siteUser (
 
 CREATE TABLE post (
 	id int AUTO_INCREMENT,
-	title varchar(255),    poster int,
+	title varchar(255),
+    poster int,
     content TEXT(65535),
     likes int,
     reported boolean,

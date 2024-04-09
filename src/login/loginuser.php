@@ -29,6 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["email"]) && isset($_PO
             $username = $row['username'];
             $userId = $row['id'];
             $isAdmin = $row['isAdmin'];
+            $isDisabled = $row['isDisabled'];
+        }
+        if($isDisabled) {
+            mysqli_close($connection);
+            header('Location: ../banned/');
         }
         session_start();
 
@@ -44,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["email"]) && isset($_PO
         if($sql->execute()) {
             //echo "A session has been created";
             // Redirect to login page
+            mysqli_close($connection);
             header('Location: '.SITEROOT);
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($connection);

@@ -16,14 +16,14 @@ $tag = isset($_GET['tag']) ? $_GET['tag'] : 'all';
 
 $where = '';
 if ($tag !== 'all') {
-    $where = " WHERE posttag.tagName = ?";
+    $where = " WHERE postTag.tagName = '$tag'";
 }
 
 $sql = "SELECT post.id, post.title, siteUser.username, siteUser.profilePicture, post.sku, post.content,
-               post.likes, COUNT(comment.id) AS comments, (ABS(post.likes)) AS heat, GROUP_CONCAT(posttag.tagName) AS tags
+               post.likes, COUNT(comment.id) AS comments, (ABS(post.likes)) AS heat, GROUP_CONCAT(postTag.tagName) AS tags
         FROM (post JOIN siteUser ON post.poster = siteUser.id)
              LEFT JOIN comment ON comment.originalPost = post.id
-             LEFT JOIN posttag ON posttag.postId = post.id
+             LEFT JOIN postTag ON postTag.postId = post.id
         $where
         GROUP BY post.id $orderBy";
 
@@ -38,15 +38,15 @@ if($stmt->execute()) {
     $result = $stmt->get_result();
     while($row = $result->fetch_assoc()) {
         array_push($posts, [
-                            'id' => $row['id'],
-                            'title' => $row['title'],
-                            'author' => $row['username'],
-                            'pfp' => $row['profilePicture'],
-                            'sku' => $row['sku'],
-                            'content' => $row['content'],
-                            'likes' => number_format($row['likes']),
-                            'commentCount' => $row['comments'],
-                            'tags' => explode(',', $row['tags']) // tags are returned as a comma-separated string
+            'id' => $row['id'],
+            'title' => $row['title'],
+            'author' => $row['username'],
+            'pfp' => $row['profilePicture'],
+            'sku' => $row['sku'],
+            'content' => $row['content'],
+            'likes' => number_format($row['likes']),
+            'commentCount' => $row['comments'],
+            'tags' => explode(',', $row['tags']) // tags are returned as a comma-separated string
         ]
         );
     }
