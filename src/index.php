@@ -25,7 +25,6 @@ include_once "renderProfilePicture.php";
             <div class="center">
                 <div class="searchBar">
                     <form>
-                        <!-- <input type="text" id="query" name="search" placeholder="Filter Posts" value="<?php echo $_GET['search']??""; ?>"> -->
                         <select id="tag" name="tag">
                             <option value="">Filter Posts</option>
                             <option value="all">All Posts</option>

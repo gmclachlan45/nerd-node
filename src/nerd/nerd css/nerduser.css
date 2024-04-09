@@ -65,6 +65,12 @@ footer h4 {
   padding: 2em;
 }
 
+#filterPosts {
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
 form {
     width: 60%;
     border: 1px solid black;
@@ -75,6 +81,7 @@ form {
     background-color: antiquewhite;
     color: #F06292;
     margin-top: 1em;
+    width: 100%;
 }
 
 #posts .post {

@@ -27,8 +27,19 @@ $username = $_GET['username'];
 		    <div id="posts">
 			    <div class="form-header">
 			        <div class="search-bar">
-				        <span class="search-text">Graph.Search()</span>
-				        <button class="search-button">GO!</button>
+                    <form id="filterPosts">
+                        <select id="tag" name="tag">
+                            <option value="">Filter Posts</option>
+                            <option value="all">All Posts</option>
+                            <option value="help">Help</option>
+                            <option value="question">Question</option>
+                            <option value="answer">Answer</option>
+                            <option value="discussion">Discussion</option>
+                         </select>
+                        <input type="hidden" name="username" value="<?php echo $username; ?>">
+                        <?php if(isset($_GET['o'])) echo '<input type="hidden" id="custId" name="o" value="'.$_GET['o'].'">';?>
+                        <input type="submit" id="submit">
+                    </form>
 			        </div>
 			        <div class="sort-by">
 				        <div class="sort-container">

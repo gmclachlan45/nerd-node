@@ -4,10 +4,10 @@ $database = DBNAME;
 $user = DBUSER;
 $pass = DBPASS;
 
-$connection = mysqli_connect($host, $user,$pass, $database, "3306");
+$connection = new mysqli($host, $user, $pass, $database, "3306");
 
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+if ($connection->connect_error) {
+    die("Failed to connect to MySQL: " . $connection->connect_error);
 }
 
 include "getQueries.php";
@@ -16,7 +16,7 @@ $tag = isset($_GET['tag']) ? $_GET['tag'] : 'all';
 
 $where = '';
 if ($tag !== 'all') {
-    $where = " WHERE posttag.tagName = '$tag'";
+    $where = " WHERE posttag.tagName = ?";
 }
 
 $sql = "SELECT post.id, post.title, siteUser.username, siteUser.profilePicture, post.sku, post.content,
@@ -28,8 +28,15 @@ $sql = "SELECT post.id, post.title, siteUser.username, siteUser.profilePicture, 
         GROUP BY post.id $orderBy";
 
 $posts = array();
-if($result = mysqli_query($connection, $sql)) {
-    while($row = mysqli_fetch_assoc($result)) {
+$stmt = $connection->prepare($sql);
+
+if ($tag !== 'all') {
+    $stmt->bind_param('s', $tag);
+}
+
+if($stmt->execute()) {
+    $result = $stmt->get_result();
+    while($row = $result->fetch_assoc()) {
         array_push($posts, [
                             'id' => $row['id'],
                             'title' => $row['title'],
