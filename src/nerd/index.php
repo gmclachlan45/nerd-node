@@ -68,9 +68,9 @@ include_once "getUserInfo.php";
             <div id="right-sidebar">
                 <?php
                 if(isset($_SESSION["sessionId"])) {
-                    if(isset($_SESSION["isAdmin"])) {
+                    if(isset($_SESSION["isAdmin"]) &&$_SESSION["sessionUsername"] != $username ) {
                         include "../components/adminSettings.php";
-                        include "../components/userSettings.php";
+                        //                        include "../components/userSettings.php";
                     } else if ($_SESSION["sessionUsername"] == $username ) {
                         include "../components/userSettings.php";
                     } else {

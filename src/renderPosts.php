@@ -7,7 +7,7 @@ function renderPost($post, $isAdmin) {
 
     echo "<div class=\"post\">";
     renderProfilePicture($username, $post['pfp']);
-    echo "<span class='tags'>".$tags."</span>"; // Display the tags
+    echo "<a href='".SITEROOT."?tag=".$tags."' class='tags'>".$tags."</a>"; // Display the tags
     echo "<h3>
             <a href='".SITEROOT."node?title=".$post['sku']."'>".$post['title']."</a>
     </h3>

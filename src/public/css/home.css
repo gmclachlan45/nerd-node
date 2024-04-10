@@ -276,3 +276,17 @@ form #delete {
     margin-right:1em;
 
 }
+
+.tags {
+    padding: 0.1em 0.4em;
+
+    border-radius: 10px;
+    border: 0.1em solid black;
+    color: white;
+    font-weight: bold;
+    margin: 1em 1em;
+    background-color: green;
+}
+.tab table{
+    width: 100%;
+}

@@ -41,7 +41,7 @@ CREATE TABLE comment (
     reported boolean,
     content TEXT(65535),
     PRIMARY KEY (id),
-    FOREIGN KEY (poster) REFERENCES siteUser(id),
+    FOREIGN KEY (poster) REFERENCES siteUser(id) ON DELETE CASCADE,
     FOREIGN KEY (originalPost) REFERENCES post(id) ON DELETE CASCADE,
     FOREIGN KEY (parentComment) REFERENCES comment(id) ON DELETE CASCADE
 );
@@ -94,6 +94,14 @@ VALUES
     (3, 'Algorithm Help!!!', 3, 'Struggling with understanding algorithms. Any recommended resources or study techniques?', 24,false, 'algorithm-help'),
     (4, 'Yes I know, I just asked for Algorithm help, but I also have a huge project Idea.', 3, 'Just completed a deep dive into machine learning algorithms, and I''m blown away by the potential applications in various industries! From predictive analytics to natural language processing, the possibilities seem endless. However, I''m struggling to decide which specific area to focus on for my next project. Should I delve deeper into neural networks and explore deep learning techniques, or should I explore reinforcement learning for more interactive applications? I''d love to hear from fellow enthusiasts about their experiences and recommendations. Additionally, if anyone has any project ideas or resources they could share, I''d greatly appreciate it. Let''s discuss and collaborate on pushing the boundaries of machine learning together!', 24,false, 'ml-algorithm'),
         (5, 'SPAM SPAM', 2, 'SPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAMSPAM SPAM', 20525, true,'code-improvement');
+
+INSERT INTO postTag
+VALUES
+    (1, "answer", 1),
+    (2, "help", 2),
+    (3, "question", 3),
+    (4, "discussion", 4),
+    (5, "answer", 5);
 
 INSERT INTO comment
 VALUES

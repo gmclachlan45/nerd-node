@@ -16,7 +16,7 @@ $tag = isset($_GET['tag']) ? $_GET['tag'] : 'all';
 
 $where = '';
 if ($tag !== 'all') {
-    $where = " WHERE postTag.tagName = '$tag'";
+    $where = " AND postTag.tagName = ?";
 }
 
 $sql = "SELECT post.id, post.title, siteUser.username, siteUser.profilePicture, post.sku, post.content,
@@ -24,7 +24,7 @@ $sql = "SELECT post.id, post.title, siteUser.username, siteUser.profilePicture, 
         FROM (post JOIN siteUser ON post.poster = siteUser.id)
              LEFT JOIN comment ON comment.originalPost = post.id
              LEFT JOIN postTag ON postTag.postId = post.id
-        $where
+        WHERE siteUser.isDisabled = false $where
         GROUP BY post.id $orderBy";
 
 $posts = array();
