@@ -74,10 +74,11 @@ include_once "getUserInfo.php";
                         include "../components/adminSettings.php";
                         //                        include "../components/userSettings.php";
                     } else if ($_SESSION["sessionUsername"] == $username ) {
+                        echo "HELLO";
                         include "../components/userSettings.php";
                     } else {
                         // If not user or admin
-                        include "../componenets/sidebar.php";
+                        include "../components/sidebar.php";
                     }
                 } else {
                     // If not logged in

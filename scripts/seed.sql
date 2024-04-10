@@ -107,5 +107,5 @@ VALUES
     (2,  3, 1, 1, -5257,false, 'Personally, I prefer the air'),
     (3,  2, 1, NULL, 0,false, 'Cringe + L + Ratio'),
     (4,  2, 1, NULL, -1000,true, 'SPAMSP AMSPAMSP AMSPAMSPAMS PAMSPAM SPAMSPAMSPA MSPAMSPAMSPA MSPAMSPAM SPAMSPAMSPAMSPAMS PAMSPAM'),
-    (5, 1, 3, NULL, 222222,false, 'Try again\n and we will find a way')
+    (5, 1, 3, NULL, 222222,false, 'Try again\n and we will find a way'),
     (6, 1, 5,   NULL, 20,false, 'wtf mods');
