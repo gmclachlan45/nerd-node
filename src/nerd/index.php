@@ -23,7 +23,6 @@ include_once "getUserInfo.php";
             ?>
         </header>
 	    <main>
-
 		    <div id="posts">
 			    <div class="form-header">
 			        <div class="search-bar">
@@ -41,23 +40,26 @@ include_once "getUserInfo.php";
                         <input type="submit" id="submit">
                     </form>
 			        </div>
-			        <div class="sort-by">
-				        <div class="sort-container">
-				            <p>Sort by:</p>
-				            <nav id="navbar">
-					            <ul>
-					                <li><a href="#Recent">Recent</a></li>
-					                <li><a href="#Hot">Hot</a></li>
-					                <li><a href="#Most_Comments">Most Comments</a></li>
-					            </ul>
-				            </nav>
-				        </div>
-			        </div>
+                        <div class="sorter">
+                        <ul>
+                            <li>Sort by:</li>
+                            <li>
+                                <a href="<?php echo "./?username=$username&";?>o=recent" id="sortedBy">Recent</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo "./?username=$username&";?>o=hot">Hot</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo "./?username=$username&";?>o=comments">Most Comments</a>
+                            </li>
+                        </ul>
+                    </div>
+
 			    </div class="postserverside">
                 <?php
                 if($posts) {
                     foreach($posts as $post) {
-                        renderPost($post, isset($_SESSION["isAdmin"]));
+                        renderPost($post, isset($_SESSION["isAdmin"]), true);
                     }
                 } else {
                     echo "There are no posts available...";

@@ -15,6 +15,7 @@ $sql = "SELECT post.title, post.id, siteUser.username, siteUser.profilePicture, 
                post.likes, COUNT(comment.id) AS comments
         FROM (post JOIN siteUser ON post.poster = siteUser.id)
              LEFT JOIN comment ON comment.originalPost = post.id
+             LEFT JOIN postTag ON postTag.postId = post.id
         GROUP BY post.id
         ORDER BY likes DESC
         LIMIT 1";
@@ -30,7 +31,8 @@ if($result = mysqli_query($connection, $sql)) {
             'sku' => $row['sku'],
             'content' => $row['content'],
             'likes' => number_format($row['likes']),
-            'commentCount' => $row['comments']
+            'commentCount' => $row['comments'],
+            'tags' => explode(',', $row['tags']) // tags are returned as a comma-separated string
         ];
     }
 } else {

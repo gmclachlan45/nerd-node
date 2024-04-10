@@ -56,7 +56,7 @@ include_once "renderProfilePicture.php";
                 <?php
                 if($posts) {
                     foreach($posts as $post) {
-                        renderPost($post, isset($_SESSION["isAdmin"]));
+                        renderPost($post, isset($_SESSION["isAdmin"]), true);
                     }
                 } else {
                     echo "There are no posts available...";

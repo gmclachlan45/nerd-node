@@ -60,11 +60,9 @@ footer h4 {
 
 #right-sidebar {
   flex-basis: 30%;
-  height: 40em;
-  border: medium solid black;
-  padding: 2em;
-  align-items: center;
 
+  border: medium solid black;
+  align-items: center;
 }
 
 #filterPosts {
@@ -83,7 +81,8 @@ form {
     background-color: antiquewhite;
     color: #F06292;
     margin-top: 1em;
-    width: 100%;
+    width: 70%;
+    min-height:80vh;
 }
 
 #posts .post {

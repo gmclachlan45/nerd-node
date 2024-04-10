@@ -1,13 +1,16 @@
 <?php
 include_once "renderProfilePicture.php";
-function renderPost($post, $isAdmin) {
+function renderPost($post, $isAdmin, $addTag) {
     $username = $post['author'];
     $commentText = $post['commentCount'] ? "Leave a comment (".$post['commentCount'].")" : "Be the first to comment";
-    $tags = isset($post['tags']) ? implode(', ', $post['tags']) : '';
+
+    $tags = $post['tags'][0] ?? "NAN";
 
     echo "<div class=\"post\">";
     renderProfilePicture($username, $post['pfp']);
-    echo "<a href='".SITEROOT."?tag=".$tags."' class='tags'>".$tags."</a>"; // Display the tags
+    if($addTag) {
+        echo "<a href='".SITEROOT."?tag=".$tags."' class='tags'>".$tags."</a>"; // Display the tags
+    }
     echo "<h3>
             <a href='".SITEROOT."node?title=".$post['sku']."'>".$post['title']."</a>
     </h3>
@@ -24,39 +27,38 @@ function renderPost($post, $isAdmin) {
         <div>
             <a href='".SITEROOT."node?title=".$post['sku']."'>".$commentText."</a>
         </div>
-        <div class='spacer'>
-    </div>
-    <div>";
+        <div class='spacer'></div>";
 
-    if(!$isAdmin)
-        echo "<div class='report' id='rep-".$post['id']."' onclick='report(".$post['id'].", 2)'> Report comment</div>";
-    else
-        echo "<form name='commentForm' action='deleteItem.php' method='post'>
+    if(isset($_SESSION['sessionUserId'])){
+
+        if(!$isAdmin)
+            echo "<div class='report' id='rep-".$post['id']."' onclick='report(".$post['id'].", 2)'> Report comment</div>";
+        else
+            echo "<form name='commentForm' action='deleteItem.php' method='post'>
         <input type='hidden' id='id' name='id' value='".$post["id"]."'>
         <input type='hidden' id='reporter' name='reporter' value='".$_SESSION['sessionUserId']."'>
         <input type='hidden' id='table' name='table' value='post'>
         <input type='submit' id='delete' value='DELETE POST'>
-    </form>";
+        </form>";
+    }
+    echo "</div></div>";
 
-    echo"</div>
-    </div>
-    </div>";
 }
 ?>
 <style>
-.post {
-    position: relative;
-}
+ .post {
+     position: relative;
+ }
 
-.tags {
-    position: absolute;
-    top: 0;
-    right: 70px;
-}
+ .tags {
+     float:right;
 
-.pfp {
-    position: relative;
-    width: 50px;
-    bottom: 15px;
-}
+     right: 0.1em;
+ }
+
+ .pfp {
+     position: relative;
+     width: 50px;
+     bottom: 15px;
+ }
 </style>

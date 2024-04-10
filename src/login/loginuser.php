@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["email"]) && isset($_PO
         if($isDisabled) {
             mysqli_close($connection);
             header('Location: ../banned/');
+    die();
         }
         session_start();
 

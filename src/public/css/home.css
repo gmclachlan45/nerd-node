@@ -202,6 +202,8 @@ footer h4{
     border: 3px solid darkgreen;
     border-radius: 50%;
     float: right;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 form #delete {

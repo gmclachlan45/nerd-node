@@ -6,7 +6,7 @@
         <?php
         include_once "../renderPosts.php";
         include "getBestPost.php";
-        renderPost($bestPost, false);
+        renderPost($bestPost, false, false);
         ?>
     </div>
     <div>

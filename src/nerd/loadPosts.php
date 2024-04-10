@@ -10,7 +10,7 @@ if ($connection->connect_error) {
     die("Failed to connect to MySQL: " . $connection->connect_error);
 }
 
-include "getQueries.php";
+include "../getQueries.php";
 
 $tag = isset($_GET['tag']) ? $_GET['tag'] : 'all';
 
