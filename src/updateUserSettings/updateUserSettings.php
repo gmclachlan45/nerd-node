@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $target_dir = __DIR__ . "/../public/images/profiles/";
             $originalFileName = basename($_FILES["edit-pfp"]["name"]);
             $imageFileType = strtolower(pathinfo($originalFileName, PATHINFO_EXTENSION));
-            $target_file = $target_dir . $originalFileName;
+            $uniqueFileName = $username . "_" . $originalFileName;
+            $target_file = $target_dir . $uniqueFileName;
             $check = getimagesize($_FILES["edit-pfp"]["tmp_name"]);
 
             if($check !== false) {
@@ -45,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     } else {
                         if (move_uploaded_file($_FILES["edit-pfp"]["tmp_name"], $target_file)) {
                             echo "The file ". htmlspecialchars( basename( $_FILES["edit-pfp"]["name"])). " has been uploaded.";
-                            $profilePicture = $originalFileName;
+                            $profilePicture = $uniqueFileName;
                         } else {
                             echo "Sorry, there was an error uploading your file.";
                         }
