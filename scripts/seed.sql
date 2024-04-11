@@ -83,7 +83,11 @@ VALUES
 (2, 'user1', '5f4dcc3b5aa765d61d8327deb882cf99', 'user1@gmail.com', 'default.png', false, false),
 (3, 'user2', '5f4dcc3b5aa765d61d8327deb882cf99', 'user2@gmail.com', 'default.png', false, false),
 (4, 'user3', '5f4dcc3b5aa765d61d8327deb882cf99', 'user3@gmail.com', 'default.png', false, false),
-(5, 'user4', '5f4dcc3b5aa765d61d8327deb882cf99', 'user4@gmail.com', 'default.png', false, false);
+(5, 'user4', '5f4dcc3b5aa765d61d8327deb882cf99', 'user4@gmail.com', 'default.png', false, false),
+(6, 'user5', '5f4dcc3b5aa765d61d8327deb882cf99', 'user5@gmail.com', 'default.png', false, false),
+(7, 'user6', '5f4dcc3b5aa765d61d8327deb882cf99', 'user6@gmail.com', 'default.png', false, false),
+(8, 'user7', '5f4dcc3b5aa765d61d8327deb882cf99', 'user7@gmail.com', 'default.png', false, false),
+(9, 'user8', '5f4dcc3b5aa765d61d8327deb882cf99', 'user8@gmail.com', 'default.png', false, false);
 
 INSERT INTO post
 VALUES
